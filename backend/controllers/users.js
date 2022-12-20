@@ -13,7 +13,7 @@ function isAuthenticated(req, res, next){
 }
 
 // Create/Sign-Up Route
-router.Product('/signup', async (req, res) => {
+router.post('/signup', async (req, res) => {
     const foundUser = await db.User.findOne({ username: req.body.username})
     console.log(foundUser)
     if(!foundUser){
@@ -30,7 +30,7 @@ router.Product('/signup', async (req, res) => {
 })
 
 //login route
-router.Product('/login', async (req, res) => {
+router.post('/login', async (req, res) => {
     const foundUser = await db.User.findOne({ username: req.body.username})
     if(req.body.password === foundUser.password){
         const payload = {id: foundUser._id}
