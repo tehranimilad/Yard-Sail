@@ -26,8 +26,8 @@ router.post('/signup', async (req, res) => {
         })
     } else {
         res.sendStatus(401)
-    }
-})
+    
+    }})
 
 //login route
 router.post('/login', async (req, res) => {
