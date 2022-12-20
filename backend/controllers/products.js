@@ -34,7 +34,7 @@ router.get('/:id', async (req,res) => {
     res.json(foundProduct)
 })
 
-// Update Route 
+// Update Route - works in Postman
 router.put('/:id', isAuthenticated, async (req,res) => {
     const foundProduct = await db.Product.findById(req.params.id)
     const token = req.headers.authorization
@@ -49,7 +49,7 @@ router.put('/:id', isAuthenticated, async (req,res) => {
     }
 })
 
-
+// Delete route - works in Postman
 router.delete('/:id', isAuthenticated, async (req,res) => {
     await db.Product.findByIdAndDelete(req.params.id)
     res.sendStatus(200)
