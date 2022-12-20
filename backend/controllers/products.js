@@ -12,7 +12,7 @@ function isAuthenticated(req,res,next) {
     }
 }
 
-// Create Route
+// Create Route - Works in Postman
 router.post('/', isAuthenticated, async (req,res) => {
     const createdProduct = await db.Product.create(req.body)
     const token = req.headers.authorization
@@ -22,24 +22,24 @@ router.post('/', isAuthenticated, async (req,res) => {
     res.json(createdProduct)
 })
 
-// Index
+// Index - Works in Postman
 router.get('/', async (req,res) => {
     const allProducts = await db.Product.find({}).populate('user')
     res.json(allProducts)
 })
 
-// Show Route
+// Show Route - works in Postman
 router.get('/:id', async (req,res) => {
     const foundProduct = await db.Product.findById(req.params.id).populate('user')
     res.json(foundProduct)
 })
 
-// Update Route
+// Update Route 
 router.put('/:id', isAuthenticated, async (req,res) => {
-    const foundProduct = await db.Product.findById(req.params.id).populate('user')
+    const foundProduct = await db.Product.findById(req.params.id)
     const token = req.headers.authorization
     const decoded = jwt.decode(token, config.jwtSecret)
-    if(foundProduct == decoded.id) {
+    if(foundProduct.user == decoded.id) {
         const updatedProduct = await db.Product.findByIdAndUpdate(
             req.params.id,
             req.body,
@@ -48,6 +48,7 @@ router.put('/:id', isAuthenticated, async (req,res) => {
         res.json(updatedProduct)
     }
 })
+
 
 router.delete('/:id', isAuthenticated, async (req,res) => {
     await db.Product.findByIdAndDelete(req.params.id)
