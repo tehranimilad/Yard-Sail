@@ -1,4 +1,4 @@
-const mongoose = require("Mongoose")
+const mongoose = require("mongoose")
 require("dotenv").config()
 const connectionString = process.env.MONGODBURI
 
@@ -6,7 +6,7 @@ mongoose.set('strictQuery', false)
 
 mongoose.connect(
     connectionString,
-    { useNewUrlParser: true, useInifiedTopology: true}
+    { useNewUrlParser: true, useUnifiedTopology: true}
     );
 
 mongoose.connection.on('connected', () => {

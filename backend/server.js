@@ -21,7 +21,7 @@ app.use(express.json())
 
 // routes
 
-app.use('/user'. userCtrl)
+app.use('/user', userCtrl)
 app.use('/product', productCtrl)
 
 app.listen(process.env.PORT, () => {

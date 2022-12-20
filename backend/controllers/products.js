@@ -18,8 +18,8 @@ router.post('/', isAuthenticated, async (req,res) => {
     const token = req.headers.authorization
     const decoded = jwt.decode(token, config.jwtSecret)
     createdProduct.user = decoded.id
-    createdPost.save()
-    res.json(createdPost)
+    createdProduct.save()
+    res.json(createdProduct)
 })
 
 // Index
