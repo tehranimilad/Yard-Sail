@@ -6,7 +6,7 @@ mongoose.set('strictQuery', false)
 
 mongoose.connect(
     connectionString,
-    { useNewUrlParser: true, useInifiedTopology: true}
+    { useNewUrlParser: true, useUnifiedTopology: true}
     );
 
 mongoose.connection.on('connected', () => {
