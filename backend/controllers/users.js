@@ -13,7 +13,7 @@ function isAuthenticated(req, res, next){
 }
 
 // Create/Sign-Up Route
-router.post('/signup', async (req, res) => {
+router.Product('/signup', async (req, res) => {
     const foundUser = await db.User.findOne({ username: req.body.username})
     console.log(foundUser)
     if(!foundUser){
@@ -30,16 +30,16 @@ router.post('/signup', async (req, res) => {
 })
 
 //login route
-router.post('/login', async (req, res) => {
+router.Product('/login', async (req, res) => {
     const foundUser = await db.User.findOne({ username: req.body.username})
     if(req.body.password === foundUser.password){
         const payload = {id: foundUser._id}
         const token = jwt.encode(payload, config.jwtSecret)
-        const userPosts = await db.Post.find({ user: foundUser._id })
+        const userProducts = await db.Product.find({ user: foundUser._id })
         res.json({
             user: foundUser,
             token: token,
-            posts: userPosts
+            products: userProducts
         })
     } else {
         res.sendStatus(401)
@@ -52,10 +52,10 @@ router.get('/token', isAuthenticated, async (req, res) => {
     const token = req.headers.authorization
     const decoded = jwt.decode(token, config.jwtSecret)
     const foundUser = await db.User.findById(decoded.id)
-    const userPosts = await db.Post.find({ user: foundUser._id })
+    const userProducts = await db.Product.find({ user: foundUser._id })
     res.json({
         user: foundUser,
-        posts: userPosts
+        Products: userProducts
     })
 })
 
@@ -68,16 +68,16 @@ router.get('/', async (req, res) => {
 // show route
 router.get('/:id', async (req, res)=> {
     const foundUser = await db.User.findById(req.params.id)
-    const userPosts = await db.Post.find({ user: foundUser._id })
+    const userProducts = await db.Product.find({ user: foundUser._id })
     res.json({
         user: foundUser,
-        posts: userPosts
+        Products: userProducts
     })
 })
 
 //delete
 router.delete('/:id', isAuthenticated, async (req, res)=> {
-    await db.Post.deleteMany({ user: req.params.id})
+    await db.Product.deleteMany({ user: req.params.id})
     await db.User.findByIdAndDelete(req.params.id)
     res.sendStatus(200)
 })
