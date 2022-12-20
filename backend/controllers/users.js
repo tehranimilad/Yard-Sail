@@ -12,7 +12,7 @@ function isAuthenticated(req, res, next){
     }
 }
 
-// Create/Sign-Up Route
+// Create/Sign-Up Route - Works in Postman
 router.post('/signup', async (req, res) => {
     const foundUser = await db.User.findOne({ username: req.body.username})
     console.log(foundUser)
@@ -26,10 +26,10 @@ router.post('/signup', async (req, res) => {
         })
     } else {
         res.sendStatus(401)
-    }
-})
+    
+    }})
 
-//login route
+//Login Route- works in Postman
 router.post('/login', async (req, res) => {
     const foundUser = await db.User.findOne({ username: req.body.username})
     if(req.body.password === foundUser.password){
@@ -47,7 +47,7 @@ router.post('/login', async (req, res) => {
 })
 
 
-// token show
+// Show Token
 router.get('/token', isAuthenticated, async (req, res) => {
     const token = req.headers.authorization
     const decoded = jwt.decode(token, config.jwtSecret)
@@ -59,13 +59,13 @@ router.get('/token', isAuthenticated, async (req, res) => {
     })
 })
 
-// index route
+// All Users Index Route
 router.get('/', async (req, res) => {
     const allUsers = await db.User.find({})
     res.json(allUsers)
 })
 
-// show route
+// Show User / Associated Posts
 router.get('/:id', async (req, res)=> {
     const foundUser = await db.User.findById(req.params.id)
     const userProducts = await db.Product.find({ user: foundUser._id })
@@ -75,7 +75,7 @@ router.get('/:id', async (req, res)=> {
     })
 })
 
-//delete
+// Delete User/Associated Posts
 router.delete('/:id', isAuthenticated, async (req, res)=> {
     await db.Product.deleteMany({ user: req.params.id})
     await db.User.findByIdAndDelete(req.params.id)
