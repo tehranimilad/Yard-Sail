@@ -71,7 +71,7 @@ router.get('/:id', async (req, res)=> {
     const userProducts = await db.Product.find({ user: foundUser._id })
     res.json({
         user: foundUser,
-        Products: userProducts
+        products: userProducts
     })
 })
 
