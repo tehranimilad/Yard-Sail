@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { userSignUp } from '../../utils/api';
 
-const SignUp = (props) => {
+const SignUp = () => {
     const [formData, setFormData] = useState({ username: '', password: ''})
 
     function handleChange(event) {
