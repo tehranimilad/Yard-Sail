@@ -1,16 +1,37 @@
 import { Link } from "react-router-dom";
+import {useState, useEffect} from 'react';
 
 
-function Nav() {
+function Nav(props) {
+  
+  
+    
+  const handleLogOut = () => {
+      localStorage.clear()
+      props.setIsLoggedIn(false)
+    }
+
   return (
-      <nav>
+    <>
+      
+        
+        {props.isLoggedIn ? 
+        <nav>
+        <Link to="/">Home</Link>
+        <Link to="/newproduct">Post New</Link>
+        <Link to="/account">Account</Link>
+        <Link onClick={handleLogOut}>LogOut</Link>
+        </nav>
+        : 
+        <nav>
         <Link to="/">Home</Link>
         <Link to="/login">Login</Link>
         <Link to="/signup">Sign Up</Link>
-        <Link to="/newproduct">Post New</Link>
-        <Link to="/editproduct">Edit</Link>
-        <Link to="/account">Account</Link>
-      </nav>
+        </nav>
+        }
+        
+      
+    </>
   );
 }
 
