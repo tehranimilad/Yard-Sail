@@ -1,18 +1,28 @@
 import { Routes, Route } from "react-router-dom";
-
+import { getAllProducts } from "../../utils/api";
 
 import LogIn from "../LogIn";
 import SignUp from "../SignUp"
 import NewProduct from "../NewProduct"
 import EditProduct from "../EditProduct"
+import { useEffect, useState } from "react";
 
 
 const Home = () => {
+    const [isLoggedIn, setLogInStatus] = useState(false)
+
+    useEffect(() => {
+      if (localStorage.token) {
+        setLogInStatus(true)
+      }
+      const productData = getAllProducts()
+      console.log(productData)
+    },[])
+
+
+
     return (
       <main>
-        
-        <h1>Home</h1>
-        <p>This is the Home page.</p>
         <Routes>
           <Route path="/login" element={<LogIn />} />
           <Route path="/signup" element={<SignUp />} />

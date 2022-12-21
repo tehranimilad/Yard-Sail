@@ -15,7 +15,6 @@ function isAuthenticated(req, res, next){
 // Create/Sign-Up Route - Works in Postman
 router.post('/signup', async (req, res) => {
     const foundUser = await db.User.findOne({ username: req.body.username})
-    console.log(foundUser)
     if(!foundUser){
         const createdUser = await db.User.create(req.body)
         const payload = {id: createdUser._id}
