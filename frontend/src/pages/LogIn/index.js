@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react"
 import { userLogin } from "../../utils/api"
 
-const LogIn = ({setShowProducts}) => {
+const LogIn = () => {
 
-    useEffect(() => {
-        setShowProducts(false)
-    }, [])
+    
 
     const [formData, setFormData] = useState({ username: '', password: ''})
 
