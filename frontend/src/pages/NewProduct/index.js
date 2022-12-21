@@ -1,7 +1,10 @@
 import { createProduct } from "../../utils/api"
 import { useState } from "react"
-
+import { useNavigate } from "react-router-dom"
 const NewProduct = () => {
+    
+
+    
     const [formData, setFormData] = useState({ 
         title: '', 
         description: '',
@@ -9,20 +12,28 @@ const NewProduct = () => {
         location: '',
         price: ''
     })
-
+    
     function handleChange(event) {
         setFormData({...formData, [event.target.name]: event.target.value })
     }
 
+    const navigate = useNavigate();
+
+    const navigateHome = () => {
+        navigate('/');
+    }
+
+
     function handleSubmit(event) {
         event.preventDefault()
         createProduct(formData)
-        
+        navigateHome()
     
     }
 
 
     return(
+       
         <form>
             <div className="form-row">
             <div className="form-group col-md-6">
@@ -49,6 +60,7 @@ const NewProduct = () => {
             </div>
             
         </form> 
+       
     )
 }
 export default NewProduct

@@ -1,7 +1,9 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { userLogin } from "../../utils/api"
 
 const LogIn = () => {
+
+    
 
     const [formData, setFormData] = useState({ username: '', password: ''})
 
@@ -23,11 +25,11 @@ const LogIn = () => {
         
 <form>
   <div className="form-group">
-    <label htmlFor="exampleInputEmail1">Username</label>
+    <label htmlFor="username">Username</label>
     <input type="text" className="form-control" name="username" onChange={handleChange} value={formData.username}/>
   </div>
   <div className="form-group">
-    <label htmlFor="exampleInputPassword1">Password</label>
+    <label htmlFor="password">Password</label>
     <input type="password" className="form-control" name="password" onChange={handleChange} value={formData.password}/>
   </div>
   <div className="form-group form-check">

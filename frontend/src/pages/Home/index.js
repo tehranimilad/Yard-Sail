@@ -1,35 +1,47 @@
-import { Routes, Route } from "react-router-dom";
+
 import { getAllProducts } from "../../utils/api";
 
-import LogIn from "../LogIn";
-import SignUp from "../SignUp"
-import NewProduct from "../NewProduct"
-import EditProduct from "../EditProduct"
+
 import { useEffect, useState } from "react";
+
+import ProductCard from "../../components/ProductCard";
 
 
 const Home = () => {
-    const [isLoggedIn, setLogInStatus] = useState(false)
+    
+    const [productList, setProductList] = useState([])
+
+    
 
     useEffect(() => {
-      if (localStorage.token) {
-        setLogInStatus(true)
-      }
-      const productData = getAllProducts()
-      console.log(productData)
-    },[])
 
+      getAllProducts()
+        .then(data => setProductList(data))
+        .catch(err => alert("Could not load products"))
+      
+      },[])
 
+      // useEffect(() => {
+      //   console.log("use effect called")
+      //   setShowProducts(true)
+      // },[])
 
     return (
       <main>
-        <Routes>
-          <Route path="/login" element={<LogIn />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/newproduct" element={<NewProduct />} />
-          <Route path="/editproduct" element={<EditProduct />} />
-
-        </Routes>
+        
+        <div className="row">
+          {productList.map((product, i) => {
+            return(
+              
+              
+              
+              <ProductCard product={product} key={i} productList={productList} setProductList={setProductList} />
+            
+           
+              
+            )
+          })}
+        </div>
       </main>
     );
 }

@@ -65,8 +65,10 @@ router.get('/', async (req, res) => {
 })
 
 // Show User / Associated Posts
-router.get('/:id', async (req, res)=> {
-    const foundUser = await db.User.findById(req.params.id)
+router.get('/:id', isAuthenticated, async (req, res)=> {
+    const token = req.headers.authorization
+    const decoded = jwt.decode(token, config.jwtSecret)
+    const foundUser = await db.User.findById(decoded.id)
     const userProducts = await db.Product.find({ user: foundUser._id })
     res.json({
         user: foundUser,
