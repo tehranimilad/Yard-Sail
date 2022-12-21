@@ -1,4 +1,4 @@
-import axios, { AxiosHeaders } from 'axios'
+import axios from 'axios'
 
 const config = {
     headers: {
