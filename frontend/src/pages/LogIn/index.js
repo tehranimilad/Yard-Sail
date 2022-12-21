@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { userLogin } from "../../utils/api"
 
 const LogIn = () => {
@@ -15,7 +15,7 @@ const LogIn = () => {
         event.preventDefault()
         userLogin(formData)
             .then((data) => localStorage.token = data.token)
-        // props.setLogInStatus
+       
     }
 
 
