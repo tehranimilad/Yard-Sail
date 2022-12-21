@@ -9,6 +9,7 @@ function Nav() {
         <Link to="/signup">Sign Up</Link>
         <Link to="/newproduct">Post New</Link>
         <Link to="/editproduct">Edit</Link>
+        <Link to="/account">Account</Link>
       </nav>
   );
 }
