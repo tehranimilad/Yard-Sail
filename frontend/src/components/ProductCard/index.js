@@ -1,8 +1,8 @@
-const ProductCard = ({product},{i}) => {
-    
 
+const ProductCard = ({product}) => {
+   
     return(
-        <div className="col s12 m6 l3" key={i}>
+        <div className="col s12 m6 l3">
                 <div className="card" style={{width: '18rem'}}>
                   <img className="card-img-top" src={product.image} alt={product.title} />
                   <div className="card-body">
