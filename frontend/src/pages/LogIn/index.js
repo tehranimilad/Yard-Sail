@@ -28,19 +28,19 @@ const LogIn = (props) => {
         <h1>Log In</h1>
         
 <form>
-  <div className="form-group">
-    <label htmlFor="username">Username</label>
+  <div className="form-group col-md-6">
+    <label htmlFor="exampleInputEmail1">Username</label>
     <input type="text" className="form-control" name="username" onChange={handleChange} value={formData.username}/>
   </div>
-  <div className="form-group">
-    <label htmlFor="password">Password</label>
+  <div className="form-group col-md-6">
+    <label htmlFor="exampleInputPassword1">Password</label>
     <input type="password" className="form-control" name="password" onChange={handleChange} value={formData.password}/>
   </div>
   <div className="form-group form-check">
     <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
     <label className="form-check-label" htmlFor="exampleCheck1">I'm not a robot.</label>
   </div>
-  <button className="btn btn-primary" onClick={handleSubmit}>Login</button>
+  <button className="btn btn-info" onClick={handleSubmit}>Login</button>
 </form>
         </>
     )
