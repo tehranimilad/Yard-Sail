@@ -59,7 +59,7 @@ router.get('/token', isAuthenticated, async (req, res) => {
     })
 })
 
-// All Users Index Route
+// All Users Index Route 
 router.get('/', async (req, res) => {
     const allUsers = await db.User.find({})
     res.json(allUsers)
