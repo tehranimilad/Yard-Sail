@@ -34,11 +34,11 @@ router.post('/login', async (req, res) => {
     if(req.body.password === foundUser.password){
         const payload = {id: foundUser._id}
         const token = jwt.encode(payload, config.jwtSecret)
-        const userProducts = await db.Product.find({ user: foundUser._id })
+        // const userProducts = await db.Product.find({ user: foundUser._id })
         res.json({
             user: foundUser,
             token: token,
-            products: userProducts
+            // products: userProducts
         })
     } else {
         res.sendStatus(401)
