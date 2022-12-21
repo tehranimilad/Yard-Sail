@@ -1,7 +1,11 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
+
 import { userLogin } from "../../utils/api"
 
-const LogIn = () => {
+const LogIn = (props) => {
+  const navigate = useNavigate()
+
 
     
 
@@ -15,7 +19,8 @@ const LogIn = () => {
         event.preventDefault()
         userLogin(formData)
             .then((data) => localStorage.token = data.token)
-       
+        props.setIsLoggedIn(true)
+        navigate('/')
     }
 
 
