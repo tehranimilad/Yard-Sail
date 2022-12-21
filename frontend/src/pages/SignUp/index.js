@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { userSignUp } from '../../utils/api';
+import { useNavigate } from "react-router-dom"
 
-const SignUp = () => {
+const SignUp = (props) => {
     const [formData, setFormData] = useState({ username: '', password: ''})
+    const navigate = useNavigate()
 
     function handleChange(event) {
         setFormData({...formData, [event.target.name]: event.target.value })
@@ -12,7 +14,8 @@ const SignUp = () => {
         event.preventDefault()
         userSignUp(formData)
             .then((data) => localStorage.token = data.token)
-        // props.setLogInStatus
+            props.setIsLoggedIn(true)
+            navigate('/')
     }
 
     return(
