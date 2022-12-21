@@ -6,11 +6,18 @@ import NewProduct from "./pages/NewProduct"
 import EditProduct from "./pages/EditProduct"
 import AccountPage from "./pages/AccountPage";
 import { Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
+import { getToken } from './utils/api';
+
 
 function App() {
-  
-  
 
+  const [user, setUser] = useState({})
+  getToken().then(data => {setUser(data)})
+    
+
+    
+   
   return (
     <main>
       <h1>Here is my nav</h1>
@@ -22,7 +29,7 @@ function App() {
           <Route path="/signup" element={<SignUp/>} />
           <Route path="/newproduct" element={<NewProduct/>} />
           <Route path="/editproduct" element={<EditProduct />} />
-          <Route path="/account" element={<AccountPage/>} />
+          <Route path="/account" element={<AccountPage user={user}/>} />
         </Routes>
         
     </main>

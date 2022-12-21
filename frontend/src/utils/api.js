@@ -25,7 +25,7 @@ export async function userSignUp(formData) {
 // Show User / Posts (Account Page)
 
 export async function getUserAccount(userId) {
-    const { data } = await axios.get('http://localhost:8000/user/' + userId)
+    const { data } = await axios.get('http://localhost:8000/user/' + userId, config)
     return data
 }
 
@@ -41,6 +41,12 @@ export async function deleteUserAccount(userId) {
 
 export async function createProduct(formData) {
     const { data } = await axios.post('http://localhost:8000/product', formData, config)
+    return data
+}
+
+// Get token data
+export async function getToken() {
+    const { data } = await axios.get('http://localhost:8000/user/token', config)
     return data
 }
 
