@@ -14,17 +14,19 @@ function Nav(props) {
       
         
         {props.isLoggedIn ? 
-        <nav>
-        <Link to="/">Home</Link>
-        <Link to="/newproduct">Post New</Link>
-        <Link to="/account">Account</Link>
-        <Link onClick={handleLogOut}>LogOut</Link>
+        <nav className="navbar mavbar-expand-lg navbar-light bg-light">
+          
+            <Link to="/" className="nav-link">Home</Link>
+            <Link to="/newproduct" className="nav-link">Post New</Link>
+            <Link to="/account" className="nav-link">Account</Link>
+            <Link onClick={handleLogOut} className="nav-link">LogOut</Link>
+          
         </nav>
         : 
-        <nav>
-        <Link to="/">Home</Link>
-        <Link to="/login">Login</Link>
-        <Link to="/signup">Sign Up</Link>
+        <nav className="navbar mavbar-expand-lg navbar-light bg-light">
+        <Link to="/" className="nav-link">Home</Link>
+        <Link to="/login" className="nav-link">Login</Link>
+        <Link to="/signup" className="nav-link">Sign Up</Link>
         </nav>
         }
         

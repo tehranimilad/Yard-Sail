@@ -3,7 +3,6 @@ import Home from './pages/Home';
 import LogIn from './pages/LogIn'
 import SignUp from "./pages/SignUp"
 import NewProduct from "./pages/NewProduct"
-import EditProduct from "./pages/EditProduct"
 import AccountPage from "./pages/AccountPage";
 import ShowProduct from './pages/ShowProduct';
 import { Routes, Route } from 'react-router-dom';
@@ -34,7 +33,6 @@ function App() {
           <Route path="/login" element={<LogIn setIsLoggedIn={setIsLoggedIn} />} />
           <Route path="/signup" element={<SignUp setIsLoggedIn={setIsLoggedIn}/>} />
           <Route path="/newproduct" element={<NewProduct/>} />
-          <Route path="/editproduct" element={<EditProduct />} />
           <Route path="/account" element={<AccountPage user={user}/>} />
         </Routes>
         
