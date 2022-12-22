@@ -14,13 +14,17 @@ import { getToken } from './utils/api';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [currentUser, setUser] = useState({})
+  const [isLoading, setIsLoading] = useState(true)
   
   
   
   useEffect(() => {
     if (localStorage.token) {
-      setIsLoggedIn(true)
       getToken().then(data => {setUser(data)})
+      setIsLoggedIn(true)
+      setIsLoading(false)
+    } else {
+      setIsLoading(false)
     }
     
   }, [])
@@ -29,6 +33,10 @@ function App() {
 
   // console.log(currentUser)
   return (
+    <>
+    {isLoading ?
+    <div>Loading...</div>
+    :
     <main>
       
         <Nav isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
@@ -41,7 +49,8 @@ function App() {
           <Route path="/account" element={<AccountPage currentUser={currentUser} setIsLoggedIn={setIsLoggedIn}/>} />
         </Routes>
         
-    </main>
+    </main>}
+    </>
   );
 }
 

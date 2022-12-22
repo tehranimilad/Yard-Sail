@@ -10,30 +10,33 @@ const ShowProduct = ({currentUser}) => {
 
     const [showProductData, setShowProductData] = useState({})
     const [formShow, setFormShow] = useState(false)
-    const [canEdit, setCanEdit] = useState(false)
+    const [canEdit, setCanEdit] = useState(true)
     const [userId, setUserID] = useState('')
+    const [productUserId, setProductUserId] = useState('')
     
-   
     
 
     const {id} = useParams()
    
 
     useEffect(() => {
-        showOneProduct(id).then(data => {setShowProductData(data)})
-        if (currentUser.user._id) {
-            setUserID(currentUser.user._id)
-        }
-    },[])
+        showOneProduct(id).then(data => {
+          setShowProductData(data)
+        })
+        console.log(currentUser)
+      }, [id])
     
-   
-
-    if (userId === showProductData.user._id) {
-        setCanEdit(true)
-    }
-
+    //   useEffect(() => {
+    //     if (currentUser.user._id && showProductData.user._id) {
+    //       setUserID(currentUser.user._id)
+    //       setProductUserId(showProductData.user._id)
+    //       if (userId === productUserId) {
+    //         setCanEdit(true)
+    //       }
+    //     }
+    //   }, [currentUser, showProductData])
+        
     
-  
     const toggleEditForm = () => {
         setFormShow(!formShow)
     }

@@ -21,33 +21,68 @@ export default function EditProduct(props) {
 
 
     return(
-        <h1>edit form</h1>
-        // <div>
-        //     <form className="edit-form" onSubmit={handleSubmit}>
-        //                 <div className="input">
-        //                     <label htmlFor="title">Title: </label>
-        //                     <input id="title" type="text" value={editedState.title} onChange={handleChange} />
-        //                 </div>
-        //                 <div className="input">
-        //                     <label htmlFor="make">Description: </label>
-        //                     <input id="desciption" type="text" value={editedState.description} onChange={handleChange} />
-        //                 </div>
-        //                 <div className="input">
-        //                     <label htmlFor="image">Image: </label>
-        //                     <input id="image" type="text" value={editedState.image} onChange={handleChange} />
-        //                 </div>
-        //                 <div className="input">
-        //                     <label htmlFor="location">Location:</label>
-        //                     <input id="location" type="text" value={editedState.trim} onChange={handleChange} />
-        //                 </div>
-        //                 <div className="input">
-        //                     <label htmlFor="price">Price:</label>
-        //                     <input id="price" type="text" value={editedState.price} onChange={handleChange} />
-        //                 </div>
-        //                 <br />
-        //                 <button type="submit">Save Changes</button>
-        //             </form>
-        // </div>
-
-    )
-}
+       <h1>Form</h1>
+            // <Form className="edit-form" onSubmit={handleSubmit}>
+            //     <Form.Group className="m-0">
+            //         <Form.Label>Title</Form.Label>
+            //         <Form.Control
+            //             id="title"
+            //             className="editForm" 
+            //             type="text"
+            //             placeholder="Enter Title"
+            //             value={editedState.title} 
+            //             onChange={handleChange} />
+            //     </Form.Group> 
+    
+            //     <Form.Group className="m-0">
+            //         <Form.Label>Description</Form.Label>
+            //         <Form.Control
+            //             id="description"
+            //             className="editForm" 
+            //             type="text"
+            //             placeholder="Enter Description"
+            //             value={editedState.description} 
+            //             onChange={handleChange} />
+            //     </Form.Group> 
+    
+            //     <Form.Group className="m-0">
+            //         <Form.Label>Image</Form.Label>
+            //         <Form.Control
+            //             id="image"
+            //             className="editForm" 
+            //             type="text"
+            //             placeholder="Enter Image Link/URL"
+            //             value={editedState.image} 
+            //             onChange={handleChange} />
+            //     </Form.Group> 
+    
+            //     <Form.Group className="m-0">
+            //         <Form.Label>Location</Form.Label>
+            //         <Form.Control
+            //             id="location"
+            //             className="editForm" 
+            //             type="text"
+            //             placeholder="Enter Product Location"
+            //             value={editedState.location} 
+            //             onChange={handleChange} />
+            //     </Form.Group> 
+    
+            //     <Form.Group className="m-0">
+            //         <Form.Label>Price</Form.Label>
+            //         <Form.Control
+            //             id="price"
+            //             className="editForm" 
+            //             type="number"
+            //             placeholder="Enter Price"
+            //             value={editedState.price} 
+            //             onChange={handleChange} />
+            //     </Form.Group> 
+            //     <Button 
+            //         className="btnFormSend"
+            //         type="submit"
+            //     >Submit Edit
+            //     </Button>
+            // </Form>
+        )
+    }
+    
