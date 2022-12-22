@@ -38,7 +38,7 @@ const SignUp = (props) => {
                     <label className="form-check-label" htmlFor="gridCheck">I'm not a robot.</label>
                 </div>
             </div>
-            <button className="btn btn-info" onClick={handleSubmit}>Sign Up</button>
+            <button className="btn btn-primary" onClick={handleSubmit}>Sign Up</button>
         </form>
 </>
     )}

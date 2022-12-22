@@ -56,7 +56,7 @@ const NewProduct = () => {
                 <label htmlFor="price">Price</label>
                 <input name="price" type="number" value={formData.price} onChange={handleChange} className="form-control"/>
             </div>
-            <button className="btn btn-info" onClick={handleSubmit}>Create</button>
+            <button className="btn btn-primary" onClick={handleSubmit}>Create</button>
             </div>
             
         </form> 
