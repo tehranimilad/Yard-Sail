@@ -1,9 +1,18 @@
+import { deleteUserAccount } from "../../utils/api"
+import { useNavigate } from "react-router-dom"
 
+const AccountPage = (props) => {
+    const navigate = useNavigate()
+    const userData = props.currentUser.user
+    const userProductData = props.currentUser.products
 
-const AccountPage = ({user}) => {
-    
-    const userData = user.user
-    const userProductData = user.products
+    const handleDelete = () => {
+        deleteUserAccount(userData._id)
+        localStorage.clear()
+        props.setIsLoggedIn(false)
+        navigate('/')
+
+    }
 
     return(
         <>
@@ -12,6 +21,7 @@ const AccountPage = ({user}) => {
             <div className="coloumn sm-6">
                     <h1>Username:{userData.username}</h1>
                     <h1>Password:{userData.password}</h1>
+                    <button onClick={handleDelete}>Delete Account</button>
             </div>
         </div>
         <h2>Your Products:</h2>

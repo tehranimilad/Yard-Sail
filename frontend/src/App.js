@@ -13,27 +13,32 @@ import { getToken } from './utils/api';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [user, setUser] = useState({})
-  getToken().then(data => {setUser(data)})
+  const [currentUser, setUser] = useState({})
+  
+  
   
   useEffect(() => {
     if (localStorage.token) {
       setIsLoggedIn(true)
+      getToken().then(data => {setUser(data)})
     }
+    
   }, [])
 
+  
 
+  // console.log(currentUser)
   return (
     <main>
       
         <Nav isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         <Routes>
           <Route path="/" element={<Home/>} />
-          <Route path="product/:id" element={<ShowProduct />} />
+          <Route path="product/:id" element={<ShowProduct currentUser={currentUser}/>} />
           <Route path="/login" element={<LogIn setIsLoggedIn={setIsLoggedIn} />} />
           <Route path="/signup" element={<SignUp setIsLoggedIn={setIsLoggedIn}/>} />
           <Route path="/newproduct" element={<NewProduct/>} />
-          <Route path="/account" element={<AccountPage user={user}/>} />
+          <Route path="/account" element={<AccountPage currentUser={currentUser} setIsLoggedIn={setIsLoggedIn}/>} />
         </Routes>
         
     </main>

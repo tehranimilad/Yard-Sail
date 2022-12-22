@@ -35,6 +35,12 @@ export async function deleteUserAccount(userId) {
     await axios.delete('http://localhost:8000/user/' + userId, config)
 }
 
+// Get token data
+export async function getToken() {
+    const { data } = await axios.get('http://localhost:8000/user/token', config)
+    return data
+}
+
 // PRODUCTS AXIOS ROUTES
 
 // Create Product Route
@@ -44,11 +50,6 @@ export async function createProduct(formData) {
     return data
 }
 
-// Get token data
-export async function getToken() {
-    const { data } = await axios.get('http://localhost:8000/user/token', config)
-    return data
-}
 
 // Get all products
 
