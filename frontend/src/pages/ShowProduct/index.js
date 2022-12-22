@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import EditProduct from "../../components/EditProduct"
 import { showOneProduct } from "../../utils/api"
@@ -21,7 +20,7 @@ const ShowProduct = ({currentUser}) => {
     useEffect(() => {
         showOneProduct(id).then(data => {setShowProductData(data)})
     }, [])
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
   
     const toggleEditForm = () => {
         setFormShow(!formShow)
