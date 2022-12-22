@@ -23,7 +23,7 @@ const ShowProduct = ({currentUser}) => {
         showOneProduct(id).then(data => {
           setShowProductData(data)
         })
-        console.log(currentUser)
+        console.log(showProductData)
       }, [id])
     
     //   useEffect(() => {
