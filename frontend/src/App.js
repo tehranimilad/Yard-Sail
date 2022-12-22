@@ -5,9 +5,11 @@ import SignUp from "./pages/SignUp"
 import NewProduct from "./pages/NewProduct"
 import EditProduct from "./pages/EditProduct"
 import AccountPage from "./pages/AccountPage";
+import ShowProduct from './pages/ShowProduct';
 import { Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getToken } from './utils/api';
+
 
 
 function App() {
@@ -21,13 +23,14 @@ function App() {
     }
   }, [])
 
+
   return (
     <main>
       
         <Nav isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         <Routes>
           <Route path="/" element={<Home/>} />
-          
+          <Route path="product/:id" element={<ShowProduct />} />
           <Route path="/login" element={<LogIn setIsLoggedIn={setIsLoggedIn} />} />
           <Route path="/signup" element={<SignUp setIsLoggedIn={setIsLoggedIn}/>} />
           <Route path="/newproduct" element={<NewProduct/>} />
