@@ -21,10 +21,7 @@ const Home = () => {
       
       },[])
 
-      // useEffect(() => {
-      //   console.log("use effect called")
-      //   setShowProducts(true)
-      // },[])
+
 
     return (
       <main>

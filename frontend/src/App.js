@@ -6,21 +6,22 @@ import NewProduct from "./pages/NewProduct"
 import EditProduct from "./pages/EditProduct"
 import AccountPage from "./pages/AccountPage";
 import { Routes, Route } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { getUserAccount } from './utils/api';
+import { useState, useEffect } from 'react';
+import { getToken } from './utils/api';
 
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
-
+  const [user, setUser] = useState({})
+  getToken().then(data => {setUser(data)})
+  
   useEffect(() => {
     if (localStorage.token) {
       setIsLoggedIn(true)
-      getUserAccount(localStorage.userId)
-       .then(data => console.log("Welcome " + data.username))
     }
   }, [])
-
+    
+   
   return (
     <main>
       
