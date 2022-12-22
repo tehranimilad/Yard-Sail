@@ -6,18 +6,21 @@ import NewProduct from "./pages/NewProduct"
 import EditProduct from "./pages/EditProduct"
 import AccountPage from "./pages/AccountPage";
 import { Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { getToken } from './utils/api';
 
 
 function App() {
-
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [user, setUser] = useState({})
   getToken().then(data => {setUser(data)})
-    
+  
+  useEffect(() => {
+    if (localStorage.token) {
+      setIsLoggedIn(true)
+    }
+  }, [])
 
-    
-   
   return (
     <main>
       
