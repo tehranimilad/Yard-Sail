@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import EditProduct from "../../components/EditProduct"
 import { showOneProduct } from "../../utils/api"
@@ -17,8 +18,6 @@ const ShowProduct = ({currentUser}) => {
     
 
     const {id} = useParams()
-   
-
     useEffect(() => {
         showOneProduct(id).then(data => {
           setShowProductData(data)
@@ -52,6 +51,7 @@ const ShowProduct = ({currentUser}) => {
     return(
         <>
         <div>
+        <img src={showProductData.image} />
         <h1>{showProductData.title}</h1>
         <p>{showProductData.description}</p>
         
