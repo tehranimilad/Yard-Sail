@@ -6,21 +6,18 @@ import NewProduct from "./pages/NewProduct"
 import EditProduct from "./pages/EditProduct"
 import AccountPage from "./pages/AccountPage";
 import { Routes, Route } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { getUserAccount } from './utils/api';
+import { useState } from 'react';
+import { getToken } from './utils/api';
 
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
-  useEffect(() => {
-    if (localStorage.token) {
-      setIsLoggedIn(true)
-      getUserAccount(localStorage.userId)
-       .then(data => console.log("Welcome " + data.username))
-    }
-  }, [])
+  const [user, setUser] = useState({})
+  getToken().then(data => {setUser(data)})
+    
 
+    
+   
   return (
     <main>
       
@@ -32,7 +29,7 @@ function App() {
           <Route path="/signup" element={<SignUp setIsLoggedIn={setIsLoggedIn}/>} />
           <Route path="/newproduct" element={<NewProduct/>} />
           <Route path="/editproduct" element={<EditProduct />} />
-          <Route path="/account" element={<AccountPage/>} />
+          <Route path="/account" element={<AccountPage user={user}/>} />
         </Routes>
         
     </main>
