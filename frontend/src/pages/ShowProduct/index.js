@@ -2,6 +2,8 @@ import { useState } from "react"
 import { useParams } from "react-router-dom"
 import { showOneProduct } from "../../utils/api"
 import Card from 'react-bootstrap/Card';
+import './showProduct.css';
+
 
 
 
@@ -15,6 +17,7 @@ const ShowProduct = () => {
   
 
     return(
+        <div className="Card">
         <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={showProductData.image} />
         <Card.Body>
@@ -26,6 +29,7 @@ const ShowProduct = () => {
           </Card.Text>
         </Card.Body>
       </Card>
+      </div>
     );
 }
 export default ShowProduct

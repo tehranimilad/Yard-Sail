@@ -5,6 +5,7 @@ import { getAllProducts } from "../../utils/api";
 import { useEffect, useState } from "react";
 
 import ProductCard from "../../components/ProductCard";
+import '../../index.css'
 
 
 const Home = () => {
