@@ -1,7 +1,8 @@
 // import { useEffect, useState } from "react";
 // import { updateOneProduct } from "../../utils/api";
+import { Form, Button } from 'react-bootstrap';
 
-export default function EditProduct(props) {
+function EditProduct(props) {
 
     // const [productState, setProductState] = useState({})
     // const [editedState, setEditedState] = useState({})
@@ -85,4 +86,4 @@ export default function EditProduct(props) {
             // </Form>
         )
     }
-    
+export default EditProduct
