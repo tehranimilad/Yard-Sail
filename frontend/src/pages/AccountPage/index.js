@@ -1,19 +1,36 @@
 import './account.css'
+import { Container, Row, Col } from "react-bootstrap"
+
 
 const AccountPage = ({user}) => {
     
     const userData = user.user
     const userProductData = user.products
 
+
+
+
     return(
         <>
-            <h1>My Account</h1>
-        <div className="row">
-            <div className="column sm-6">
-                    <h2>Welcome, {userData.username}!</h2>
-            </div>
-        </div>
-        <h5><u>Your current listings:</u></h5>
+
+<Container>
+<div class="row justify-content-md-center">
+<div class="col-md-auto">
+      <h1>My Account</h1>
+    </div>
+    </div>
+    <Row>
+      <Col sm={5}>
+      <h2>Hello, {userData.username}!</h2>
+      </Col>
+      <Col sm={4}>
+      <h5><u>Your current listings:</u></h5>
+      </Col>
+    </Row>
+  </Container>
+         
+
+       
         <div className="row">
             {userProductData.map((product, i) => {
                 return(

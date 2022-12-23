@@ -22,7 +22,7 @@ function NavMenu(props) {
         <Container>
         <Link to="/" className="nav-link">Home</Link>
         <Link to="/newproduct" className="nav-link">Post</Link>
-        <Link to="/account" className="nav-link">Account</Link>
+        <Link to="/account" className="nav-link">My Account</Link>
         <Link onClick={handleLogOut}>LogOut</Link>
         </Container>
         </Navbar>

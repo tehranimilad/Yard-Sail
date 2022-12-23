@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import ProductCard from "../../components/ProductCard";
 import '../../index.css'
 import { Container, Row, Col, Image } from "react-bootstrap"
-import Carousel from 'react-bootstrap/Carousel';
 
 
 
