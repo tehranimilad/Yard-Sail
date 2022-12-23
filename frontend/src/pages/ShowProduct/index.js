@@ -4,7 +4,7 @@ import EditProduct from "../../components/EditProduct"
 import { showOneProduct } from "../../utils/api"
 import { deleteOneProduct } from "../../utils/api"
 import { useNavigate } from "react-router-dom"
-
+import {Card} from 'react-bootstrap'
 const ShowProduct = ({currentUser}) => {
     const navigate = useNavigate()
 
@@ -49,14 +49,19 @@ const ShowProduct = ({currentUser}) => {
    
     return(
         <>
-        <div>
-        <img src={showProductData.image} />
-        <h1>{showProductData.title}</h1>
-        <p>{showProductData.description}</p>
-        
-
-
-        </div>
+        <div className="Card">
+        <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={showProductData.image} />
+        <Card.Body>
+          <Card.Title>{showProductData.title}</Card.Title>
+          <Card.Text>
+          <p>{showProductData.description}</p>
+          <p>{showProductData.location}</p>
+          <p>${showProductData.price}</p>
+          </Card.Text>
+        </Card.Body>
+      </Card>
+      </div>
         {canEdit ? 
         <div>
         <button onClick={toggleEditForm}>Edit</button>

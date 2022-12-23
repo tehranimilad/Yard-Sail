@@ -10,23 +10,27 @@ import ProductCard from "../../components/ProductCard";
 const Home = () => {
     
     const [productList, setProductList] = useState([])
-
+    const [noProducts, setNoProducts] = useState(false)
     
 
     useEffect(() => {
 
       getAllProducts()
         .then(data => setProductList(data))
-        .catch(err => alert("Could not load products"))
+        .catch(err => setNoProducts(true))
       
       },[])
 
     
 
     return (
+      <>
       <main>
+      {noProducts ? 
+      
+        <div>No Products have been added yet!</div>
         
-        <div className="row">
+      : <div className="row">
           {productList.map((product, i) => {
             return(
               
@@ -38,8 +42,9 @@ const Home = () => {
               
             )
           })}
-        </div>
-      </main>
+        </div>}
+      </main> 
+      </>
     );
 }
 

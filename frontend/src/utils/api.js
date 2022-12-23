@@ -46,7 +46,7 @@ export async function getToken() {
 // Create Product Route
 
 export async function createProduct(formData) {
-    const { data } = await axios.post('http://localhost:8000/product', formData, config)
+    const { data } = await axios.post('http://localhost:8000/product/', formData, config)
     return data
 }
 
@@ -54,7 +54,7 @@ export async function createProduct(formData) {
 // Get all products
 
 export async function getAllProducts() {
-    const { data } = await axios.get('http://localhost:8000/product')
+    const { data } = await axios.get('http://localhost:8000/product/')
     return data
 }
 
