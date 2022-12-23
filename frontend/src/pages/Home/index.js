@@ -6,6 +6,9 @@ import { useEffect, useState } from "react";
 
 import ProductCard from "../../components/ProductCard";
 import '../../index.css'
+import { Container, Row, Col, Image } from "react-bootstrap"
+import Carousel from 'react-bootstrap/Carousel';
+
 
 
 
@@ -27,6 +30,17 @@ const Home = () => {
 
     return (
       <main>
+        <Container>
+          <Row>
+            <Col sm={2}>
+              <Image src="https://i.postimg.cc/wvXyPfjH/sailboat.png" fluid />
+            </Col>
+            <Col sm={4}>
+              <h1>YardSail</h1>
+            </Col>
+          </Row>
+        </Container>
+
         
         <div className="row">
           {productList.map((product, i) => {
@@ -40,8 +54,10 @@ const Home = () => {
               
             )
           })}
+
         </div>
       </main>
+      
     );
 }
 
