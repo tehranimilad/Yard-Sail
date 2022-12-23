@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
 
-function Nav(props) {
+
+
+function NavMenu(props) {
   
   
     
@@ -14,12 +18,14 @@ function Nav(props) {
       
         
         {props.isLoggedIn ? 
-        <nav>
-        <Link to="/">Home</Link>
-        <Link to="/newproduct">Post New</Link>
-        <Link to="/account">Account</Link>
+        <Navbar bg="light" variant="light" className="flex-column">
+        <Container>
+        <Link to="/" className="nav-link">Home</Link>
+        <Link to="/newproduct" className="nav-link">Post</Link>
+        <Link to="/account" className="nav-link">Account</Link>
         <Link onClick={handleLogOut}>LogOut</Link>
-        </nav>
+        </Container>
+        </Navbar>
         : 
         <nav>
         <Link to="/">Home</Link>
@@ -33,4 +39,4 @@ function Nav(props) {
   );
 }
 
-export default Nav;
+export default NavMenu;

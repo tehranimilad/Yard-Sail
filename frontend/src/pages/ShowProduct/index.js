@@ -25,7 +25,7 @@ const ShowProduct = () => {
           <Card.Text>
           <p>{showProductData.description}</p>
           <p>{showProductData.location}</p>
-          <p>{showProductData.price}</p>
+          <p>${showProductData.price}</p>
           </Card.Text>
         </Card.Body>
       </Card>

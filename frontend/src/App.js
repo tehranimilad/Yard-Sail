@@ -1,4 +1,4 @@
-import Nav from './components/Nav';
+import NavMenu from './components/Nav';
 import Home from './pages/Home';
 import LogIn from './pages/LogIn'
 import SignUp from "./pages/SignUp"
@@ -27,7 +27,7 @@ function App() {
   return (
     <main>
       
-        <Nav isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+        <NavMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="product/:id" element={<ShowProduct />} />
