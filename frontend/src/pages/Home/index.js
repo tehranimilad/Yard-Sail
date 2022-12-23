@@ -37,6 +37,10 @@ const Home = () => {
             </Col>
           </Row>
         </Container>
+<<<<<<< HEAD
+=======
+        
+>>>>>>> e9d7dba (added bootstrap styling to nav and homepage)
         
         
       <div className="row">
