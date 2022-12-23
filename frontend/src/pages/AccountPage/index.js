@@ -1,10 +1,24 @@
 import { deleteUserAccount } from "../../utils/api"
 import { useNavigate } from "react-router-dom"
+import { useParams } from "react-router-dom"
+import { useEffect, useState } from "react"
+import EditProduct from "../../components/EditProduct"
+import { showOneProduct } from "../../utils/api"
+import { deleteOneProduct } from "../../utils/api"
+import { updateOneProduct } from "../../utils/api"
+
 
 const AccountPage = (props) => {
+    const [formShow, setFormShow] = useState(false)
+    const [showProductData, setShowProductData] = useState({})
+    const [canEdit, setCanEdit] = useState(true)
     const navigate = useNavigate()
     const userData = props.currentUser.user
     const userProductData = props.currentUser.products
+
+    const toggleEditForm = () => {
+        setFormShow(!formShow)
+    }
 
     const handleDelete = () => {
         deleteUserAccount(userData._id)
@@ -12,6 +26,37 @@ const AccountPage = (props) => {
         props.setIsLoggedIn(false)
         navigate('/')
 
+    }
+
+    const {id} = useParams()
+    useEffect(() => {
+        showOneProduct(id).then(data => {setShowProductData(data)})
+    }, [])
+
+    useEffect(() => {
+        setCanEdit(props)
+        setShowProductData(props)
+    }, [props])
+
+
+    const handleChange = (event) => {
+        setCanEdit({ ...canEdit, [event.target.id]: event.target.value })
+    }
+
+    const handleSubmit = async (event) => {
+        event.preventDefault()
+        updateOneProduct().then(data => {
+            
+            setShowProductData(data)
+        })
+        
+    }
+
+    // Deletes then navigates to home page
+    const deleteProduct = () => {
+        const itemId = showProductData._id
+        deleteOneProduct(itemId).then(alert("You deleted this product"))
+        navigate('/')
     }
 
     return(
@@ -33,8 +78,18 @@ const AccountPage = (props) => {
                     <div className="card-body">
                         <h5 className="card-title">{product.title}</h5>
                         <p className="card-text">{product.description}</p>
+                        {canEdit ? 
+                        <div>
+                        <button onClick={toggleEditForm}>Edit</button>
+                        <button onClick={deleteProduct}>Delete</button> 
+                        </div>
+                        : null}
+                        {formShow ? 
+                        <EditProduct showProductData={showProductData}/>
+                        : null}
                     </div>
-                </div>)
+                </div>
+                )
             })}
         </div>
         </>
