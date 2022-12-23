@@ -5,6 +5,9 @@ import { getAllProducts } from "../../utils/api";
 import { useEffect, useState } from "react";
 
 import ProductCard from "../../components/ProductCard";
+import '../../index.css'
+import { Container, Row, Col, Image } from "react-bootstrap"
+
 
 
 const Home = () => {
@@ -26,9 +29,15 @@ const Home = () => {
     return (
       <>
       <main>
-      {noProducts ? 
-      
-        <div>No Products have been added yet!</div>
+        <Container>
+          <Row>
+              <Image src="https://wallpaperaccess.com/full/1302508.jpg" fluid />
+              <Col lrg={4}>
+              <h2> We host, you sell. Smooth Sailing. </h2>
+            </Col>
+          </Row>
+        </Container>
+        
         
       : <div className="row">
           {productList.map((product, i) => {
