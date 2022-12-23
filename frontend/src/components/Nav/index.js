@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Image } from "react-bootstrap"
 
 function Nav(props) {
   
@@ -11,10 +12,12 @@ function Nav(props) {
 
   return (
     <>
-      
-        
         {props.isLoggedIn ? 
         <nav className="navbar mavbar-expand-lg navbar-light bg-light">
+              <div class="navbar-header">
+              <Image src="https://i.postimg.cc/wvXyPfjH/sailboat.png" width="25%" fluid />
+              <a class="navbar-brand" href="/">Yard Sail</a>
+              </div>
             <Link to="/" className="nav-link">Home</Link>
             <Link to="/newproduct" className="nav-link">Post New</Link>
             <Link to="/account" className="nav-link">Account</Link>
@@ -28,7 +31,6 @@ function Nav(props) {
           <Link to="/signup" className="nav-link">Sign Up</Link>
         </nav>
         }
-        
       
     </>
   );

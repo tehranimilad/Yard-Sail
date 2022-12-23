@@ -6,9 +6,6 @@ import { userLogin } from "../../utils/api"
 const LogIn = (props) => {
   const navigate = useNavigate()
 
-
-    
-
     const [formData, setFormData] = useState({ username: '', password: ''})
 
     function handleChange(event) {
@@ -38,7 +35,7 @@ const LogIn = (props) => {
     <input type="password" className="form-control" name="password" onChange={handleChange} value={formData.password}/>
   </div>
   <div className="form-group form-check">
-    <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
+    <input type="checkbox" className="form-check-input" id="exampleCheck1" required />
     <label className="form-check-label" htmlFor="exampleCheck1">I'm not a robot.</label>
   </div>
   <button className="btn btn-primary" onClick={handleSubmit}>Login</button>
