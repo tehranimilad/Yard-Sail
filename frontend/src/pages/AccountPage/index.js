@@ -6,6 +6,8 @@ import EditProduct from "../../components/EditProduct"
 import { showOneProduct } from "../../utils/api"
 import { deleteOneProduct } from "../../utils/api"
 import { updateOneProduct } from "../../utils/api"
+import { Link } from "react-router-dom"
+import ShowProductEdit from "../ShowProductEdit"
 
 
 const AccountPage = (props) => {
@@ -28,17 +30,6 @@ const AccountPage = (props) => {
 
     }
 
-    const {id} = useParams()
-    useEffect(() => {
-        showOneProduct(id).then(data => {setShowProductData(data)})
-    }, [])
-
-    useEffect(() => {
-        setCanEdit(props)
-        setShowProductData(props)
-    }, [props])
-
-
     const handleChange = (event) => {
         setCanEdit({ ...canEdit, [event.target.id]: event.target.value })
     }
@@ -46,7 +37,6 @@ const AccountPage = (props) => {
     const handleSubmit = async (event) => {
         event.preventDefault()
         updateOneProduct().then(data => {
-            
             setShowProductData(data)
         })
         
@@ -73,20 +63,15 @@ const AccountPage = (props) => {
         <div className="row">
             {userProductData.map((product, i) => {
                 return(
-                <div className="card" style={{width: '18rem'}}>
+                <div key={i} className="card" style={{width: '18rem'}}>
                     <img className="card-img-top" src={product.image} alt={product.title}/>
                     <div className="card-body">
                         <h5 className="card-title">{product.title}</h5>
                         <p className="card-text">{product.description}</p>
-                        {canEdit ? 
+                        
                         <div>
-                        <button onClick={toggleEditForm}>Edit</button>
-                        <button onClick={deleteProduct}>Delete</button> 
+                        <Link to={"/productedit/" + product._id}>Edit</Link>
                         </div>
-                        : null}
-                        {formShow ? 
-                        <EditProduct showProductData={showProductData}/>
-                        : null}
                     </div>
                 </div>
                 )
