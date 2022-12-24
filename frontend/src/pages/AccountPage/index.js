@@ -6,6 +6,8 @@ import EditProduct from "../../components/EditProduct"
 import { showOneProduct } from "../../utils/api"
 import { deleteOneProduct } from "../../utils/api"
 import { updateOneProduct } from "../../utils/api"
+import { Link } from "react-router-dom"
+import ShowProductEdit from "../ShowProductEdit"
 
 
 const AccountPage = (props) => {
@@ -28,17 +30,6 @@ const AccountPage = (props) => {
 
     }
 
-    const {id} = useParams()
-    useEffect(() => {
-        showOneProduct(id).then(data => {setShowProductData(data)})
-    }, [])
-
-    useEffect(() => {
-        setCanEdit(props)
-        setShowProductData(props)
-    }, [props])
-
-
     const handleChange = (event) => {
         setCanEdit({ ...canEdit, [event.target.id]: event.target.value })
     }
@@ -46,7 +37,6 @@ const AccountPage = (props) => {
     const handleSubmit = async (event) => {
         event.preventDefault()
         updateOneProduct().then(data => {
-            
             setShowProductData(data)
         })
         
@@ -80,13 +70,8 @@ const AccountPage = (props) => {
                         <p className="card-text">{product.description}</p>
                         
                         <div>
-                        <button onClick={toggleEditForm}>Edit</button>
-                        <button onClick={deleteProduct}>Delete</button> 
+                        <Link to={"/productedit/" + product._id}>Edit</Link>
                         </div>
-                       
-                        {formShow ? 
-                        <EditProduct showProductData={showProductData}/>
-                        : null}
                     </div>
                 </div>
                 )
