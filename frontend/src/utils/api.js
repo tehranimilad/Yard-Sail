@@ -67,8 +67,8 @@ export async function showOneProduct(itemId) {
 
 // Update a Product
 
-export async function updateOneProduct(itemId) {
-    const { data } = await axios.put('http://localhost:8000/product/' + itemId, config)
+export async function updateOneProduct(itemId, formData) {
+    const { data } = await axios.put('http://localhost:8000/product/' + itemId, formData)
     return data
 }
 

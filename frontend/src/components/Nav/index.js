@@ -14,9 +14,9 @@ function Nav(props) {
     <>
         {props.isLoggedIn ? 
         <nav className="navbar mavbar-expand-lg navbar-light bg-light">
-              <div class="navbar-header">
+              <div className="navbar-header">
               <Image src="https://i.postimg.cc/wvXyPfjH/sailboat.png" width="25%" fluid />
-              <a class="navbar-brand" href="/">Yard Sail</a>
+              <a className="navbar-brand" href="/">Yard Sail</a>
               </div>
             <Link to="/" className="nav-link">Home</Link>
             <Link to="/newproduct" className="nav-link">Post New</Link>

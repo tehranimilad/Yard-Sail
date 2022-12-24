@@ -35,18 +35,15 @@ router.get('/:id', async (req,res) => {
 })
 
 // Update Route - works in Postman
-router.put('/:id', isAuthenticated, async (req,res) => {
+router.put('/:id', async (req,res) => {
     const foundProduct = await db.Product.findById(req.params.id)
-    const token = req.headers.authorization
-    const decoded = jwt.decode(token, config.jwtSecret)
-    if(foundProduct.user == decoded.id) {
         const updatedProduct = await db.Product.findByIdAndUpdate(
             req.params.id,
             req.body,
             {new:true}
         )
         res.json(updatedProduct)
-    }
+    
 })
 
 // Delete route - works in Postman
