@@ -78,12 +78,12 @@ const AccountPage = (props) => {
                     <div className="card-body">
                         <h5 className="card-title">{product.title}</h5>
                         <p className="card-text">{product.description}</p>
-                        {canEdit ? 
+                        
                         <div>
                         <button onClick={toggleEditForm}>Edit</button>
                         <button onClick={deleteProduct}>Delete</button> 
                         </div>
-                        : null}
+                       
                         {formShow ? 
                         <EditProduct showProductData={showProductData}/>
                         : null}
