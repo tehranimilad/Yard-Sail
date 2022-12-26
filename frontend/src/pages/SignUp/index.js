@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { userSignUp } from '../../utils/api';
 import { useNavigate } from "react-router-dom"
+import { Image } from "react-bootstrap"
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 const SignUp = (props) => {
     const [formData, setFormData] = useState({ username: '', password: ''})
@@ -20,26 +23,40 @@ const SignUp = (props) => {
 
     return(
         <>
+        <div class="Login-Signup-Div">
+        <Image src="https://i.postimg.cc/wvXyPfjH/sailboat.png" width="15%" fluid />
         <h1>Sign Up</h1>
-        <form>
-            <div className="form-row">
-                <div className="form-group col-md-6">
-                    <label htmlFor="username">Username</label>
-                    <input type="text" name="username" className="form-control" value={formData.username} onChange={handleChange} required/>
-                </div>
-                 <div className="form-group col-md-6">
-                    <label htmlFor="password">Password</label>
-                    <input type="password" name="password" className="form-control" value={formData.password} onChange={handleChange}/>
-                </div>
-            </div>
-            <div className="form-group">
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" id="gridCheck"/>
-                    <label className="form-check-label" htmlFor="gridCheck">I'm not a robot.</label>
-                </div>
-            </div>
-            <button className="btn btn-primary" onClick={handleSubmit}>Sign Up</button>
-        </form>
+        <Form>
+        <Form.Group className="mb-4" controlId="formBasicUsername" >
+        <Form.Label>Username</Form.Label>
+        <Form.Control 
+        input type="text" 
+        className="form-control" 
+        name="username" 
+        onChange={handleChange} 
+        value={formData.username}
+        placeholder="Enter Username"/>
+        <Form.Text className="text-muted"> 
+        We'll never share your information with anyone.
+        </Form.Text>
+        
+        </Form.Group>
+        <Form.Group className="mb-4" controlId="formBasicPassword" >
+        <Form.Label>Password</Form.Label>
+        <Form.Control 
+        input type="password" 
+        className="form-control" 
+        name="password" 
+        onChange={handleChange} 
+        value={formData.password}
+        placeholder="Enter Password"/>
+        </Form.Group>
+        <Button id="Login-Signup-But" variant="primary" type="submit" onClick={handleSubmit}>
+        Signup
+        </Button>
+        </Form>
+
+        </div>
 </>
     )}
 export default SignUp

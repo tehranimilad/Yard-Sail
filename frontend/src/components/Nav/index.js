@@ -13,6 +13,7 @@ function Nav(props) {
   return (
     <>
         {props.isLoggedIn ? 
+
         <nav className="navbar mavbar-expand-lg navbar-light bg-light">
               <div className="navbar-header">
               <Image src="https://i.postimg.cc/wvXyPfjH/sailboat.png" width="25%" fluid />
