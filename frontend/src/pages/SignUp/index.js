@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom"
 import { Image } from "react-bootstrap"
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import "../LogIn/login-signup.css"
 
 const SignUp = (props) => {
     const [formData, setFormData] = useState({ username: '', password: ''})
@@ -23,6 +24,7 @@ const SignUp = (props) => {
 
     return(
         <>
+
         <div class="Login-Signup-Div">
         <Image src="https://i.postimg.cc/wvXyPfjH/sailboat.png" width="15%" fluid />
         <h1>Sign Up</h1>

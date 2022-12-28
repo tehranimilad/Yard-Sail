@@ -1,0 +1,36 @@
+.form-control {
+    max-width: 75%;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.Login-Signup-Div {
+    border: 2px solid rgb(0, 0, 0);
+    box-shadow: 2px 2px 7px rgb(0, 0, 0);
+    max-width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    padding: 3% 5% 5% 5%;
+    margin-top: 2%;
+}
+
+#Login-Signup-But {
+    width: 75%;
+    color: white;
+    background-color: blue;
+    border-radius: 10px;
+}
+
+#Signup-But {
+    width: 75%;
+    color: white;
+    background-color: gray;
+    border-radius: 10px;
+    border: 2px solid gray;
+}
+
+#Login-Signup-Pic{
+    height: 550px;
+    width: 100%;
+}

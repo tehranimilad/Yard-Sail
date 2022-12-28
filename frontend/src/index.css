@@ -8,8 +8,8 @@
         height: 100%;
 }
 
-    #header-background {
-        max-height: 500px ;
+#header-background {
+    max-height: 500px ;
 
 }
 
@@ -42,42 +42,6 @@
     transform: scale(1.1);
 }
 
-.form-control {
-    max-width: 75%;
-    margin: 0 auto;
-    align-items: center;
-}
-
-.Login-Signup-Div {
-    border: 2px solid black;
-    max-width: 65%;
-    margin: 0 auto;
-    text-align: center;
-    align-items: center;
-    padding: 3% 5% 5% 5%;
-    margin-top: 5%;
-
-}
-
-#Login-Signup-But {
-    width: 75%;
-    color: white;
-    background-color: blue;
-    border-radius: 10px;
-}
-
-#Signup-But {
-    width: 75%;
-    color: white;
-    background-color: gray;
-    border-radius: 10px;
-    border: 2px solid gray;
-}
-
-#Login-Signup-Pic{
-    height: 550px;
-    width: 100%;
-}
 }
 
 @media (min-width: 600px) {
@@ -125,44 +89,6 @@
 
 .navbar-header:hover {
     transform: scale(1.1);
-}
-
-
-.form-control {
-    max-width: 75%;
-    margin: 0 auto;
-    align-items: center;
-}
-
-.Login-Signup-Div {
-    border: 2px solid rgb(0, 0, 0);
-    box-shadow: 2px 2px 7px rgb(0, 0, 0);
-    max-width: 60%;
-    margin: 0 auto;
-    text-align: center;
-    align-items: center;
-    padding: 3% 5% 5% 5%;
-    margin-top: 5%;
-}
-
-#Login-Signup-But {
-    width: 75%;
-    color: white;
-    background-color: blue;
-    border-radius: 10px;
-}
-
-#Signup-But {
-    width: 75%;
-    color: white;
-    background-color: gray;
-    border-radius: 10px;
-    border: 2px solid gray;
-}
-
-#Login-Signup-Pic{
-    height: 550px;
-    width: 100%;
 }
 
 }
