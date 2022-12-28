@@ -7,16 +7,9 @@ import './accountPage.css'
 import { Image } from "react-bootstrap";
 
 const AccountPage = (props) => {
-    const [formShow, setFormShow] = useState(false)
-    const [showProductData, setShowProductData] = useState({})
-    const [canEdit, setCanEdit] = useState(true)
     const navigate = useNavigate()
     const userData = props.currentUser.user
     const userProductData = props.currentUser.products
-
-    const toggleEditForm = () => {
-        setFormShow(!formShow)
-    }
 
     const handleDelete = () => {
         deleteUserAccount(userData._id)
@@ -24,25 +17,6 @@ const AccountPage = (props) => {
         props.setIsLoggedIn(false)
         navigate('/')
 
-    }
-
-    const handleChange = (event) => {
-        setCanEdit({ ...canEdit, [event.target.id]: event.target.value })
-    }
-
-    const handleSubmit = async (event) => {
-        event.preventDefault()
-        updateOneProduct().then(data => {
-            setShowProductData(data)
-        })
-        
-    }
-
-    // Deletes then navigates to home page
-    const deleteProduct = () => {
-        const itemId = showProductData._id
-        deleteOneProduct(itemId).then(alert("You deleted this product"))
-        navigate('/')
     }
 
     return(
