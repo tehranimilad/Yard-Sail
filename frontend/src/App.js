@@ -1,4 +1,5 @@
 import Nav from './components/Nav';
+import '../src/index.css'
 import Home from './pages/Home';
 import LogIn from './pages/LogIn'
 import SignUp from "./pages/SignUp"
@@ -9,8 +10,6 @@ import ShowProductEdit from './pages/ShowProductEdit';
 import { Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getToken } from './utils/api';
-
-
 
 
 function App() {

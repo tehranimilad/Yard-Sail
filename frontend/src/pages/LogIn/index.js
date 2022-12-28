@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useNavigate, Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { userLogin } from "../../utils/api"
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -42,11 +42,7 @@ const LogIn = (props) => {
     onChange={handleChange} 
     value={formData.username}
     placeholder="Enter Username"/>
-    <Form.Text className="text-muted"> 
-    We'll never share your information with anyone.
-    </Form.Text>
   </Form.Group>
-
 
   <Form.Group className="mb-4" controlId="formBasicPassword" >
     <Form.Label>Password</Form.Label>
@@ -57,6 +53,9 @@ const LogIn = (props) => {
     onChange={handleChange} 
     value={formData.password}
     placeholder="Enter Password"/>
+      <Form.Text className="text-muted"> 
+    We'll never share your information with anyone.
+    </Form.Text>
   </Form.Group>
   <Button id="Login-Signup-But" variant="primary" type="submit" onClick={handleSubmit}>
     Login
@@ -67,7 +66,7 @@ const LogIn = (props) => {
   </Form.Group>
   
   <Form.Group className="mb-4">
-  <Button href="/signup" id="Login-Signup-But">Sign Up</Button>
+  <Button href="/signup" id="Signup-But">Sign Up</Button>
   </Form.Group>
 
 </Form>

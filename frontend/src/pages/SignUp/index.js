@@ -36,11 +36,8 @@ const SignUp = (props) => {
         onChange={handleChange} 
         value={formData.username}
         placeholder="Enter Username"/>
-        <Form.Text className="text-muted"> 
-        We'll never share your information with anyone.
-        </Form.Text>
-        
         </Form.Group>
+
         <Form.Group className="mb-4" controlId="formBasicPassword" >
         <Form.Label>Password</Form.Label>
         <Form.Control 
@@ -50,9 +47,12 @@ const SignUp = (props) => {
         onChange={handleChange} 
         value={formData.password}
         placeholder="Enter Password"/>
+        <Form.Text className="text-muted"> 
+        We'll never share your information with anyone.
+        </Form.Text>
         </Form.Group>
         <Button id="Login-Signup-But" variant="primary" type="submit" onClick={handleSubmit}>
-        Signup
+        Sign Up
         </Button>
         </Form>
 

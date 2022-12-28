@@ -1,0 +1,46 @@
+body, html {
+    height: 100%;
+  }
+
+.active-listings {
+    max-width: 70%;
+    margin:0 auto;
+    text-align: center;
+    padding: 0 5px 5px 5px;
+}
+
+.account-greeting {
+    border: 2px solid rgb(0, 0, 0);
+    box-shadow: 2px 2px 7px rgb(0, 0, 0);
+    max-width: 70%;
+    margin:0 auto;
+    text-align: center;
+    padding: 2%;
+    margin-top:20px;
+}
+
+.account-page {
+    background-image: url("https://wallpaperaccess.com/full/115002.jpg");
+    height: 30vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#create-product {
+    margin-bottom: 20px;
+}
+
+#delete-account {
+    background-color: red;
+    border: 2px solid rgb(255, 0, 0);
+}
+
+#warning {
+    font-weight: bolder;
+}
+
+.card-img-top {
+    height: 300px;
+    max-width: 100%;
+}

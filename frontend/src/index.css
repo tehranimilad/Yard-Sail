@@ -1,3 +1,87 @@
+@media (max-width: 599px){
+    .row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 5%;
+        width: 100%;
+        height: 100%;
+}
+
+    #header-background {
+        max-height: 500px ;
+
+}
+
+.navbar {
+    padding: 2px 20px 0px 15px;
+}
+
+.nav-link {
+    font-size: 20px;
+    border-radius: 4px;
+    padding: 0px 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    background-color: black;
+    color: white;
+    transform: scale(1.2);
+}
+
+.navbar-header {
+    font-size: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-header:hover {
+    transform: scale(1.1);
+}
+
+.form-control {
+    max-width: 75%;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.Login-Signup-Div {
+    border: 2px solid black;
+    max-width: 65%;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    padding: 3% 5% 5% 5%;
+    margin-top: 5%;
+
+}
+
+#Login-Signup-But {
+    width: 75%;
+    color: white;
+    background-color: blue;
+    border-radius: 10px;
+}
+
+#Signup-But {
+    width: 75%;
+    color: white;
+    background-color: gray;
+    border-radius: 10px;
+    border: 2px solid gray;
+}
+
+#Login-Signup-Pic{
+    height: 550px;
+    width: 100%;
+}
+}
+
+@media (min-width: 600px) {
+
 
 .row {
     display: flex;
@@ -13,31 +97,72 @@
 
 }
 
+.navbar {
+    padding: 2px 35px 0px 15px;
+}
+
+.nav-link {
+    font-size: 20px;
+    border-radius: 4px;
+    padding: 0px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    background-color: black;
+    color: white;
+    transform: scale(1.2);
+}
+
+.navbar-header {
+    font-size: 20px;
+    border-radius: 4px;
+    padding: 0px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-header:hover {
+    transform: scale(1.1);
+}
+
+
 .form-control {
-    max-width: 50%;
+    max-width: 75%;
     margin: 0 auto;
     align-items: center;
 }
 
 .Login-Signup-Div {
-    border: 2px solid black;
-    max-width: 50%;
+    border: 2px solid rgb(0, 0, 0);
+    box-shadow: 2px 2px 7px rgb(0, 0, 0);
+    max-width: 60%;
     margin: 0 auto;
     text-align: center;
     align-items: center;
     padding: 3% 5% 5% 5%;
     margin-top: 5%;
-
 }
 
 #Login-Signup-But {
-    width: 50%;
+    width: 75%;
     color: white;
     background-color: blue;
     border-radius: 10px;
 }
 
+#Signup-But {
+    width: 75%;
+    color: white;
+    background-color: gray;
+    border-radius: 10px;
+    border: 2px solid gray;
+}
+
 #Login-Signup-Pic{
     height: 550px;
     width: 100%;
+}
+
 }
