@@ -1,0 +1,98 @@
+@media (max-width: 650px) {
+
+.form-control {
+    max-width: 75%;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.Login-Signup-Div {
+    border: 2px solid rgb(0, 0, 0);
+    box-shadow: 2px 2px 7px rgb(0, 0, 0);
+    max-width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    padding: 2% 3% 3% 2%;
+    margin-top: 20px;
+    background-color: white;
+}
+
+#Login-Signup-But {
+    width: 75%;
+    color: white;
+    background-color: blue;
+    border-radius: 10px;
+}
+
+#Signup-But {
+    width: 75%;
+    color: white;
+    background-color: gray;
+    border-radius: 10px;
+    border: 2px solid gray;
+}
+
+#Login-Signup-Pic{
+    height: 550px;
+    width: 100%;
+}
+
+.signup-image {
+    background-image: url("https://wallpaperaccess.com/full/1302472.jpg");
+    height: 25vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: 150px
+}
+}
+
+@media (min-width:651px) {
+.form-control {
+    max-width: 75%;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.Login-Signup-Div {
+    border: 2px solid rgb(0, 0, 0);
+    box-shadow: 2px 2px 7px rgb(0, 0, 0);
+    max-width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    padding: 2% 3% 3% 2%;
+    margin-top: 20px;
+    background-color: white;
+}
+
+#Login-Signup-But {
+    width: 75%;
+    color: white;
+    background-color: blue;
+    border-radius: 10px;
+}
+
+#Signup-But {
+    width: 75%;
+    color: white;
+    background-color: gray;
+    border-radius: 10px;
+    border: 2px solid gray;
+}
+
+#Login-Signup-Pic{
+    height: 550px;
+    width: 100%;
+}
+
+.signup-image {
+    background-image: url("https://wallpaperaccess.com/full/1302472.jpg");
+    height: 25vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+    
+}
