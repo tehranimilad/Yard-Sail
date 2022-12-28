@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import Button from 'react-bootstrap/Button';
 import React from "react";
 import './accountPage.css'
+import { Image } from "react-bootstrap";
 
 const AccountPage = (props) => {
     const navigate = useNavigate()
@@ -20,9 +21,10 @@ const AccountPage = (props) => {
 
     return(
         <>
-        <div className="account-page" />
-        <div class="account-greeting">
-            <div className="coloumn sm-6">
+        <div className="account-page">
+        <div>
+            <div className="coloumn sm-6 account-greeting">
+        <div className="account-info">
             <h1>Hello, {userData.username}</h1>
             <p>Thanks for being a Yard Sail user!</p>
                 <h4>Username: {userData.username}</h4>
@@ -31,10 +33,12 @@ const AccountPage = (props) => {
                 <p>Permantly delete your account, active listings, and all data associated with it.</p>
                 <p id="warning"> Warning: this action can't be undone!</p> 
                 <Button id="delete-account" onClick={handleDelete}>Delete Account</Button>
+                </div>
             </div>
         </div>
+        </div>
 
-        <div class="active-listings">
+        <div className="active-listings">
             <h2>Your Active Listings:</h2>
             <div className="row">
                 {userProductData.map((product, i) => {

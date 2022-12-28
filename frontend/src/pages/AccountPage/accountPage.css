@@ -10,8 +10,6 @@ body, html {
 }
 
 .account-greeting {
-    border: 2px solid rgb(0, 0, 0);
-    box-shadow: 2px 2px 7px rgb(0, 0, 0);
     max-width: 70%;
     margin:0 auto;
     text-align: center;
@@ -19,13 +17,21 @@ body, html {
     margin-top:20px;
 }
 
-/* .account-page {
-    background-image: url("https://wallpaperaccess.com/full/115002.jpg");
-    height: 30vh;
+.account-info {
+    margin-top: 150px;
+    box-shadow: 2px 2px 7px rgb(0, 0, 0);
+    padding: 2%;
+    background-color: white;
+}
+
+.account-page {
+    background-image: url("./assets/115002.jpg");
+    height: 75vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-} */
+
+}
 
 #create-product {
     margin-bottom: 20px;
@@ -44,3 +50,4 @@ body, html {
     height: 300px;
     max-width: 100%;
 }
+

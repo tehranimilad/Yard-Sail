@@ -27,8 +27,8 @@ const LogIn = (props) => {
 
     return(
         <>
-
-        <div class="Login-Signup-Div">      
+        <div className="signup-image" />
+        <div className="Login-Signup-Div">    
         <Image src="https://i.postimg.cc/wvXyPfjH/sailboat.png" width="15%" fluid />  
         <h1>Log In</h1>
 <Form>
@@ -70,6 +70,7 @@ const LogIn = (props) => {
 
 </Form>
 </div>
+
         </>
     )
 }

@@ -31,8 +31,6 @@ function App() {
   }, [])
 
   
-
-  // console.log(currentUser)
   return (
     <>
     {isLoading ?
