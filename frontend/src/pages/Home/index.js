@@ -8,6 +8,8 @@ import ProductCard from "../../components/ProductCard";
 import '../../index.css'
 import { Container, Row, Col, Image } from "react-bootstrap"
 
+import Carousel from 'react-bootstrap/Carousel';
+
 
 
 const Home = () => {
@@ -28,29 +30,40 @@ const Home = () => {
 
     return (
       <main>
+  
         <Container>
-          <Row>
-              <Image src="https://wallpaperaccess.com/full/1302508.jpg" fluid />
-              <Col lrg={4}>
-              <h2> We host, you sell. Smooth Sailing. </h2>
-            </Col>
-          </Row>
+          <Carousel>
+          {productList.map((product, i) => {
+            return(
+              
+              <Carousel.Item key={i}>
+                <img className="row-fluid pics" src={product.image} alt={product.title} 
+                />
+              </Carousel.Item>
+            
+            );
+          }
+          )
+        }
+       
+        </Carousel>
         </Container>
+        
+
+
         
         
         <div className="row">
           {productList.map((product, i) => {
             return(
-              
-              
-              
               <ProductCard product={product} key={i} productList={productList} setProductList={setProductList} />
-            
-           
               
-            )
-          })}
-        </div>
+            
+            );
+          }
+          )
+        }
+       </div>
       </main>
     );
 }
