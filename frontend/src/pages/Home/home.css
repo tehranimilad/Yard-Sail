@@ -1,15 +1,20 @@
-.pics {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    object-fit: fill;
-    width: 100%;
-    height: 50px;
+.main {
+    background-size: cover;
 }
 
-.row {
-    display: flex;
-    justify-content: center;
-    margin-left: 25%;
 
+
+.col-md-8 {
+    object-fit: cover;
+    object-position: center;
 }
+
+
+
+.card {
+    height:100%;
+    padding:15px;
+    
+}
+
+
