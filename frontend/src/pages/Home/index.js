@@ -4,6 +4,11 @@ import { useEffect, useState } from "react";
 import ProductCard from "../../components/ProductCard";
 import { Container, Row, Col, Image } from "react-bootstrap"
 import '../../../src/index.css'
+import Carousel from 'react-bootstrap/Carousel';
+import './home.css'
+
+import Carousel from 'react-bootstrap/Carousel';
+import './home.css'
 
 
 
@@ -25,29 +30,65 @@ const Home = () => {
 
     return (
       <main>
-        <Container>
-          <Row>
-              <Image src="https://wallpaperaccess.com/full/1302508.jpg" fluid />
-              <Col lrg={4}>
-              <h2> We host, you sell. Smooth Sailing. </h2>
-            </Col>
-          </Row>
-        </Container>
         
-        
+
         <div className="row">
+    <div className="col-md-8">
+
+    <Carousel variant="dark">
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://i.postimg.cc/d1Rh0ZP7/ab.jpg"
+          alt="First slide"
+        />
+
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://i.postimg.cc/XJBZ61xg/ny.jpg"
+          alt="Second slide"
+        />
+
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://i.postimg.cc/YqKrhCqk/sale.jpg"
+          alt="Third slide"
+        />
+
+      </Carousel.Item>
+    </Carousel>
+
+
+
+
+        </div>
+        </div>
+
+        <div class="row">
+   
+        <div class="card card-body h-100 py-2">    
+        <div class="col-sm-4 align-items-stretch d-flex mx-auto justify-content-center card-deck card-block px-3 mt-3">
+
+
+
           {productList.map((product, i) => {
             return(
               
-              
-              
               <ProductCard product={product} key={i} productList={productList} setProductList={setProductList} />
               
-           
               
-            )
-          })}
-        </div>
+            );
+          }
+          )
+        }
+       </div>
+      </div>
+</div>
+  
       </main>
     );
 }
