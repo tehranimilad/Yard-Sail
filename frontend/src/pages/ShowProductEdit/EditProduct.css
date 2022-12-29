@@ -1,0 +1,22 @@
+#Editprod-But {
+    width: 75%;
+    color: white;
+    
+    border-radius: 10px;
+    
+    margin-top: 10px;
+}
+
+#EditProdDiv {
+       
+        max-width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 2% 3% 3% 2%;
+        margin-top: 20px;
+        background-color: white; 
+        
+    }
+        
+
+

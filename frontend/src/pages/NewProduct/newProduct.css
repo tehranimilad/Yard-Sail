@@ -1,0 +1,19 @@
+#Newprod-But {
+    width: 75%;
+    color: white;
+    background-color: gray;
+    border-radius: 10px;
+    border: 2px solid gray;
+    margin-top: 10px;
+}
+
+#NewProdDiv {
+        border: 2px solid rgb(0, 0, 0);
+        box-shadow: 2px 2px 7px rgb(0, 0, 0);
+        max-width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        align-items: center;
+        padding: 2% 3% 3% 2%;
+        margin-top: 20px;
+        background-color: white; }
