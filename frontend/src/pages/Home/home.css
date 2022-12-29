@@ -1,5 +1,6 @@
 .main {
     background-size: cover;
+
 }
 
 
@@ -14,7 +15,10 @@
 .card {
     height:100%;
     padding:15px;
-    
+    margin: 10px
 }
 
 
+.card img {
+    height:40vh;
+}
