@@ -46,6 +46,10 @@ body, html {
     font-weight: bolder;
 }
 
+.card {
+    margin:3%;
+}
+
 .card-img-top {
     height: 300px;
     max-width: 100%;

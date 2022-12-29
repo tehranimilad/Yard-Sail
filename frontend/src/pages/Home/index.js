@@ -2,13 +2,10 @@
 import { getAllProducts } from "../../utils/api";
 import { useEffect, useState } from "react";
 import ProductCard from "../../components/ProductCard";
-import { Container, Row, Col, Image } from "react-bootstrap"
 import '../../../src/index.css'
 import Carousel from 'react-bootstrap/Carousel';
 import './home.css'
 
-import Carousel from 'react-bootstrap/Carousel';
-import './home.css'
 
 
 
@@ -67,14 +64,6 @@ const Home = () => {
 
         </div>
         </div>
-
-        <div class="row">
-   
-        <div class="card card-body h-100 py-2">    
-        <div class="col-sm-4 align-items-stretch d-flex mx-auto justify-content-center card-deck card-block px-3 mt-3">
-
-
-
           {productList.map((product, i) => {
             return(
               
@@ -85,9 +74,7 @@ const Home = () => {
           }
           )
         }
-       </div>
-      </div>
-</div>
+
   
       </main>
     );
