@@ -42,7 +42,7 @@ const Home = () => {
               
               
               <ProductCard product={product} key={i} productList={productList} setProductList={setProductList} />
-            
+              
            
               
             )
@@ -51,4 +51,5 @@ const Home = () => {
       </main>
     );
 }
-export default AccountPage 
+
+export default Home;

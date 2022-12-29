@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react"
+import { Card } from "react-bootstrap"
 import { useParams } from "react-router-dom"
 import { showOneProduct } from "../../utils/api"
-import { deleteOneProduct } from "../../utils/api"
-import { useNavigate } from "react-router-dom"
+
+
 
 const ShowProduct = () => {
-    const navigate = useNavigate()
+    
 
     const [showProductData, setShowProductData] = useState({})
    
@@ -16,17 +17,25 @@ const ShowProduct = () => {
     useEffect(() => {
         showOneProduct(id).then(data => {setShowProductData(data)})
     }, [])
-    // const navigate = useNavigate()
-  
+    
+    console.log(showProductData.user)
 
     return(
         <>
-        <div>
-        <img src={showProductData.image} />
-        <h1>{showProductData.title}</h1>
-        <p>{showProductData.description}</p>
+        <div className="row">
+            <div className="col-sm-10">
+                <Card style={{width: "80%"}} className="mx-auto">
+                <Card.Img src={showProductData.image} variant="top" className="mx-auto" style={{height:"90%", width:"70%"}}/>
+                <Card.Body>
+                <Card.Title>{showProductData.title}</Card.Title>
+                <Card.Text>{showProductData.description}</Card.Text>
+                <Card.Text>Location: {showProductData.location}</Card.Text>
+                <Card.Text>Price: $ {showProductData.price}</Card.Text>
+                
+                </Card.Body>
+                </Card>
+            </div>
         </div>
-       
         </>
     )
 }
