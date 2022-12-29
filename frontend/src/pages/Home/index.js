@@ -1,12 +1,11 @@
 
 import { getAllProducts } from "../../utils/api";
-
-
 import { useEffect, useState } from "react";
-
 import ProductCard from "../../components/ProductCard";
-import '../../index.css'
 import { Container, Row, Col, Image } from "react-bootstrap"
+import '../../../src/index.css'
+import Carousel from 'react-bootstrap/Carousel';
+import './home.css'
 
 import Carousel from 'react-bootstrap/Carousel';
 import './home.css'

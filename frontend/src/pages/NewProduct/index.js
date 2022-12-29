@@ -1,6 +1,10 @@
 import { createProduct } from "../../utils/api"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import './newProduct.css'
+
 const NewProduct = () => {
     
 
@@ -33,34 +37,56 @@ const NewProduct = () => {
 
 
     return(
-       
-        <form>
-            <div className="form-row">
-            <div className="form-group col-md-6">
-                <label htmlFor="title">Title</label>
-                <input name="title" type="text" value={formData.title} onChange={handleChange} className="form-control" required />
-            </div>
-            <div className="form-group col-md-6">
-                <label htmlFor="description">Description</label>
-                <input name="description" type="text" value={formData.description} onChange={handleChange} className="form-control" required />
-            </div>
-            <div className="form-group col-md-6">
-                <label htmlFor="image">Image</label>
-                <input name="image" type="text" value={formData.image} onChange={handleChange} className="form-control" />
-            </div>
-            <div className="form-group col-md-6">
-                <label htmlFor="location">Location</label>
-                <input name="location" type="text" value={formData.location} onChange={handleChange} className="form-control" />
-            </div>
-            <div className="form-group col-md-6">
-                <label htmlFor="price">Price</label>
-                <input name="price" type="number" value={formData.price} onChange={handleChange} className="form-control"/>
-            </div>
-            <button className="btn btn-primary" onClick={handleSubmit}>Create</button>
-            </div>
-            
-        </form> 
-       
+        <div className="row" id="NewProdDiv">
+        <div className="col-md-8">
+        <Form>
+            <Form.Group className="mb-3">
+                <Form.Label className="newProductLabel" htmlFor="title">Title</Form.Label>
+                <Form.Control 
+                name="title" 
+                type="text" 
+                value={formData.title} 
+                onChange={handleChange} 
+                required />
+            </Form.Group>
+            <Form.Group className="mb-3">
+                <Form.Label className="newProductLabel" htmlFor="description">Description</Form.Label>
+                <Form.Control 
+                name="description" 
+                type="text" 
+                value={formData.description} 
+                onChange={handleChange} 
+                required />
+            </Form.Group>
+            <Form.Group className="mb-3">
+                <Form.Label className="newProductLabel" htmlFor="image">Image</Form.Label>
+                <Form.Control 
+                name="image" 
+                type="text" 
+                value={formData.image} 
+                onChange={handleChange} />
+            </Form.Group>
+            <Form.Group className="mb-3">
+                <Form.Label className="newProductLabel" htmlFor="location">Location</Form.Label>
+                <Form.Control 
+                name="location" 
+                type="text" 
+                value={formData.location} 
+                onChange={handleChange} />
+            </Form.Group>
+            <Form.Group className="mb-3">
+                <Form.Label className="newProductLabel" htmlFor="price">Price</Form.Label>
+                <Form.Control 
+                name="price" 
+                type="number" 
+                value={formData.price} 
+                onChange={handleChange}
+                placeholder="Enter Price"/>
+            </Form.Group>
+            <Button id="Newprod-But" variant="primary" type="submit" onClick={handleSubmit}>Create</Button>
+        </Form> 
+       </div>
+       </div>
     )
 }
 export default NewProduct
