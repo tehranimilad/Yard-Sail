@@ -65,23 +65,7 @@ const Home = () => {
 
 
 
-        {/* <Container>
-          <Carousel>
-          {productList.map((product, i) => {
-            return(
-              
-              <Carousel.Item key={i}>
-                <img className="pics" src={product.image} alt={product.title}
-                />
-              </Carousel.Item>
-            
-            );
-          }
-          )
-        }
-       
-        </Carousel>
-        </Container> */}
+
         </div>
         </div>
 
