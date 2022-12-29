@@ -14,7 +14,8 @@ const NewProduct = () => {
         description: '',
         image: '',
         location: '',
-        price: ''
+        price: '',
+        contact: ''
     })
     
     function handleChange(event) {
@@ -56,7 +57,8 @@ const NewProduct = () => {
                 type="text" 
                 value={formData.description} 
                 onChange={handleChange} 
-                required />
+                required 
+                />
             </Form.Group>
             <Form.Group className="mb-3">
                 <Form.Label className="newProductLabel" htmlFor="image">Image</Form.Label>
@@ -81,8 +83,18 @@ const NewProduct = () => {
                 type="number" 
                 value={formData.price} 
                 onChange={handleChange}
-                placeholder="Enter Price"/>
+                />
             </Form.Group>
+            <Form.Group className="mb-3">
+                <Form.Label className="newProductLabel" htmlFor="contact">Contact Info</Form.Label>
+                <Form.Control 
+                name="contact" 
+                type="text" 
+                value={formData.contact} 
+                onChange={handleChange}
+                placeholder="Email/Phone Number"/>
+            </Form.Group>
+            
             <Button id="Newprod-But" variant="primary" type="submit" onClick={handleSubmit}>Create</Button>
         </Form> 
        </div>
