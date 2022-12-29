@@ -71,11 +71,11 @@ const ShowProductEdit = () => {
 
         
             <div className="col-md-6" id="EditProdDiv">
-                <Form>
+            <Form>
                     <Form.Group className="mb-3">
                         <Form.Label className="editProductLabel">Title</Form.Label>
                         <Form.Control
-                            name="title"
+                            id="title"
                             type="text"
                             value={editedState.title} 
                             onChange={handleChange} 
@@ -85,7 +85,7 @@ const ShowProductEdit = () => {
                     <Form.Group className="mb-3">
                         <Form.Label className="editProductLabel">Description</Form.Label>
                         <Form.Control
-                            name="description"
+                            id="description"
                             type="text"
                             value={editedState.description} 
                             onChange={handleChange} 
@@ -95,7 +95,7 @@ const ShowProductEdit = () => {
                     <Form.Group className="mb-3">
                         <Form.Label className="editProductLabel">Image</Form.Label>
                         <Form.Control
-                            name="image"
+                            id="image"
                             type="text"
                             value={editedState.image} 
                             onChange={handleChange} />
@@ -104,7 +104,7 @@ const ShowProductEdit = () => {
                     <Form.Group className="mb-3">
                         <Form.Label className="editProductLabel">Location</Form.Label>
                         <Form.Control
-                            name="location"
+                            id="location"
                             type="text"
                             value={editedState.location} 
                             onChange={handleChange} />
@@ -113,20 +113,19 @@ const ShowProductEdit = () => {
                     <Form.Group className="mb-3">
                         <Form.Label className="editProductLabel">Price</Form.Label>
                         <Form.Control
-                            name="price"
+                            id="price"
                             type="number"
                             value={editedState.price} 
                             onChange={handleChange} />
                     </Form.Group> 
                     <Form.Group className="mb-3">
-                        <Form.Label className="newProductLabel" htmlFor="contact">Contact Info</Form.Label>
-                        <Form.Control 
-                        name="contact" 
-                        type="text" 
-                        value={editedState.contact} 
-                        onChange={handleChange}
-                        />
-                    </Form.Group>
+                        <Form.Label className="editProductLabel">Contact Info</Form.Label>
+                        <Form.Control
+                            id="contact"
+                            type="text"
+                            value={editedState.contact} 
+                            onChange={handleChange} />
+                    </Form.Group> 
                     <Button id="Editprod-But" variant="primary" type="submit" onClick={handleSubmit}>
                     Submit Edit
                     </Button>

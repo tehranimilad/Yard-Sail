@@ -14,7 +14,8 @@ const NewProduct = () => {
         description: '',
         image: '',
         location: '',
-        price: ''
+        price: '',
+        contact: ''
     })
     
     function handleChange(event) {
