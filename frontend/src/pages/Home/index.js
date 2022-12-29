@@ -7,8 +7,6 @@ import '../../../src/index.css'
 import Carousel from 'react-bootstrap/Carousel';
 import './home.css'
 
-import Carousel from 'react-bootstrap/Carousel';
-import './home.css'
 
 
 
@@ -33,7 +31,7 @@ const Home = () => {
         
 
         <div className="row">
-    <div className="col-md-8">
+    <div className="col-md-8 mx-auto">
 
     <Carousel variant="dark">
       <Carousel.Item>
@@ -68,13 +66,8 @@ const Home = () => {
         </div>
         </div>
 
-        <div class="row">
+        <div className="row">
    
-        <div class="card card-body h-100 py-2">    
-        <div class="col-sm-4 align-items-stretch d-flex mx-auto justify-content-center card-deck card-block px-3 mt-3">
-
-
-
           {productList.map((product, i) => {
             return(
               
@@ -86,9 +79,7 @@ const Home = () => {
           )
         }
        </div>
-      </div>
-</div>
-  
+
       </main>
     );
 }

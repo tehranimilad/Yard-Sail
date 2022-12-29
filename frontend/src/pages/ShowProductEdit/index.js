@@ -14,7 +14,8 @@ const ShowProductEdit = () => {
         description: '',
         image: '',
         location: '',
-        price: ''
+        price: '',
+        contact: ''
     })
     
     
@@ -62,6 +63,7 @@ const ShowProductEdit = () => {
                 <Card.Text>{showProductData.description}</Card.Text>
                 <Card.Text>Location: {showProductData.location}</Card.Text>
                 <Card.Text>Price: $ {showProductData.price}</Card.Text>
+                <Card.Text>Contact Info: {showProductData.contact}</Card.Text>
                 <Button variant="danger" id="Deleteprod-But" onClick={deleteProduct}>Delete</Button>
                 </Card.Body>
                 </Card>
@@ -116,6 +118,15 @@ const ShowProductEdit = () => {
                             value={editedState.price} 
                             onChange={handleChange} />
                     </Form.Group> 
+                    <Form.Group className="mb-3">
+                        <Form.Label className="newProductLabel" htmlFor="contact">Contact Info</Form.Label>
+                        <Form.Control 
+                        name="contact" 
+                        type="text" 
+                        value={editedState.contact} 
+                        onChange={handleChange}
+                        />
+                    </Form.Group>
                     <Button id="Editprod-But" variant="primary" type="submit" onClick={handleSubmit}>
                     Submit Edit
                     </Button>

@@ -17,8 +17,7 @@ const ShowProduct = () => {
     useEffect(() => {
         showOneProduct(id).then(data => {setShowProductData(data)})
     }, [])
-    
-    console.log(showProductData.user)
+
 
     return(
         <>
@@ -31,7 +30,7 @@ const ShowProduct = () => {
                 <Card.Text>{showProductData.description}</Card.Text>
                 <Card.Text>Location: {showProductData.location}</Card.Text>
                 <Card.Text>Price: $ {showProductData.price}</Card.Text>
-                
+                <Card.Text>Contact Info: {showProductData.contact}</Card.Text>
                 </Card.Body>
                 </Card>
             </div>
