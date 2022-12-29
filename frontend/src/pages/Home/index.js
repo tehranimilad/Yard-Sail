@@ -64,6 +64,7 @@ const Home = () => {
 
         </div>
         </div>
+        <div className="row">
           {productList.map((product, i) => {
             return(
               
@@ -75,7 +76,7 @@ const Home = () => {
           )
         }
 
-  
+</div>
       </main>
     );
 }
