@@ -8,6 +8,8 @@ require('./models')
 require('dotenv').config()
 const bodyParser = require('body-parser')
 
+const PORT = process.env.PORT
+
 const userCtrl = require('./controllers/users')
 const productCtrl = require('./controllers/products')
 // ... other imports ...
@@ -35,5 +37,6 @@ app.get("*", (req, res) => {
     res.sendFile(path.join(path.dirname(__dirname), "frontend", "build", "index.html"));
 });
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
+    console.log(`App is running at localhost:${process.env.PORT}`)
 })
