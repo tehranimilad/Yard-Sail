@@ -2,21 +2,26 @@ import { deleteUserAccount } from "../../utils/api"
 import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
 import Button from 'react-bootstrap/Button';
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './accountPage.css'
 import { Image } from "react-bootstrap";
 
 const AccountPage = (props) => {
     const navigate = useNavigate()
-    const userData = props.currentUser.user
-    const userProductData = props.currentUser.products
+    const [userData, setUserData] = useState({})
+    const [userProductData, setUserProductData] = useState([])
+    
+
+    useEffect(() => {
+        setUserData(props.currentUser.user)
+        setUserProductData(props.currentUser.products)
+    }, [props])
 
     const handleDelete = () => {
         deleteUserAccount(userData._id)
         localStorage.clear()
         props.setIsLoggedIn(false)
         navigate('/')
-
     }
 
     return(
