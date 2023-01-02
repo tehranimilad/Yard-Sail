@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import Button from 'react-bootstrap/Button';
 import React, { useEffect, useState } from "react";
 import './accountPage.css'
-import { Image } from "react-bootstrap";
+
 
 const AccountPage = (props) => {
     const navigate = useNavigate()
