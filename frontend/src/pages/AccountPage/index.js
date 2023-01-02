@@ -8,8 +8,13 @@ import { Image } from "react-bootstrap";
 
 const AccountPage = (props) => {
     const navigate = useNavigate()
-    const userData = props.currentUser.user
-    const userProductData = props.currentUser.products
+    const [userData, setUserData] = useState({})
+    const [userProductData, setUserProductData] = useState([])
+
+    useEffect(() => {
+        setUserData(props.currentUser.user)
+        setUserProductData(props.currentUser.products)
+    }, [props])
 
     const handleDelete = () => {
         deleteUserAccount(userData._id)
