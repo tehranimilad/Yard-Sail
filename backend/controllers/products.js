@@ -4,6 +4,7 @@ const db = require('../models')
 const jwt = require('jwt-simple')
 const config = require('../config/config')
 
+// Checks if the user token created when logging in exists
 function isAuthenticated(req,res,next) {
     if(req.headers.authorization) {
         next()
@@ -23,6 +24,7 @@ router.post('/', isAuthenticated, async (req,res) => {
 })
 
 // Index - Works in Postman
+// Populate grabs all of the information associated with the user ID stored in the user collection
 router.get('/', async (req,res) => {
     const allProducts = await db.Product.find({}).populate('user')
     res.json(allProducts)

@@ -1,4 +1,6 @@
+
 import { Link } from "react-router-dom"
+// Passing props from home, deconstructing props to access the specific product properties
 const ProductCard = ({product}) => {
     
    

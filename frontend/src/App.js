@@ -20,11 +20,16 @@ function App() {
   
   
   useEffect(() => {
+    // If local storage token exists then: 
     if (localStorage.token) {
+      // Grab the token and the user data associated with the specific token
       getToken().then(data => {setUser(data)})
+      // Set the User as Logged In
       setIsLoggedIn(true)
+      // Set the loading status to false
       setIsLoading(false)
     } else {
+      // If the token doesn't exists, page will load with the original empty current user state.
       setIsLoading(false)
     }
     

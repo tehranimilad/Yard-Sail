@@ -9,17 +9,21 @@ import "./login-signup.css"
 
 const LogIn = (props) => {
   const navigate = useNavigate()
-
+    // Log in form values are empty initially 
     const [formData, setFormData] = useState({ username: '', password: ''})
-
+    // Set the form data state to the key of your event target (username or password), and the value of what is typed
     function handleChange(event) {
         setFormData({...formData, [event.target.name]: event.target.value })
     }
 
+    // 
     function handleSubmit(event) {
+      // Prevent page from reloading
         event.preventDefault()
+        // Deconstructing data to set the local storage token equal to the token we created in our login route
         userLogin(formData)
             .then((data) => localStorage.token = data.token)
+        // Sets our loggedin state (passed down in props to true)
         props.setIsLoggedIn(true)
         navigate('/')
     }

@@ -11,6 +11,9 @@ const AccountPage = (props) => {
     const [userData, setUserData] = useState({})
     const [userProductData, setUserProductData] = useState([])
     
+    // useEffect sets the user data equal to the user property of the current user, which is passed down through props
+    // then it sets the product data equal to the products property of the current user, also passed down through props
+    // This happens everytime props (currentUser / isLoggedIn) changes
 
     useEffect(() => {
         setUserData(props.currentUser.user)
@@ -18,9 +21,13 @@ const AccountPage = (props) => {
     }, [props])
 
     const handleDelete = () => {
+        // Axios function to delete user account by using user.id 
         deleteUserAccount(userData._id)
+        // Clearning local storage in order to log out user
         localStorage.clear()
+        // Setting user's login status to false, aka logged out
         props.setIsLoggedIn(false)
+        // Then navigate back home
         navigate('/')
     }
 

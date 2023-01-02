@@ -6,7 +6,7 @@ function Nav(props) {
   
   const navigate = useNavigate()
   
-    
+  // Allow user to log out, clears local storage, sets login status to false, and then navigate back home.  
   const handleLogOut = () => {
       localStorage.clear()
       props.setIsLoggedIn(false)
@@ -15,9 +15,10 @@ function Nav(props) {
 
   return (
     <>
+        {/* If the user is logged in, render the following content */}
         {props.isLoggedIn ? 
 
-        <nav className="navbar mavbar-expand-lg navbar-light bg-dark">
+        <nav className="navbar navbar-expand-lg navbar-light bg-dark">
               <div className="navbar-header">
               <Image src="https://i.postimg.cc/wvXyPfjH/sailboat.png" width="25%" fluid />
               <a className="navbar-brand" href="/">Yard Sail</a>
@@ -29,7 +30,8 @@ function Nav(props) {
           
         </nav>
         : 
-        <nav className="navbar mavbar-expand-lg navbar-light bg-dark">
+        // If the user is not logged in, render the follwing content
+        <nav className="navbar navbar-expand-lg navbar-light bg-dark">
           <div className="navbar-header">
               <Image src="https://i.postimg.cc/wvXyPfjH/sailboat.png" width="25%" fluid />
               <a className="navbar-brand" href="/">Yard Sail</a>

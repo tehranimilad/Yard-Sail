@@ -4,6 +4,7 @@ const db = require('../models')
 const jwt = require('jwt-simple')
 const config = require('../config/config')
 
+// Checks if the user token created when logging in exists
 function isAuthenticated(req, res, next){
     if(req.headers.authorization){
         next()
@@ -16,7 +17,9 @@ function isAuthenticated(req, res, next){
 router.post('/signup', async (req, res) => {
     const foundUser = await db.User.findOne({ username: req.body.username})
     if(!foundUser){
+        // If User is not found, user is created
         const createdUser = await db.User.create(req.body)
+        // Creates token that is associated with specific user
         const payload = {id: createdUser._id}
         const token = jwt.encode(payload, config.jwtSecret)
         res.json({
@@ -50,7 +53,9 @@ router.post('/login', async (req, res) => {
 router.get('/token', isAuthenticated, async (req, res) => {
     const token = req.headers.authorization
     const decoded = jwt.decode(token, config.jwtSecret)
+    // Find user by the decoded token ID we established when logging in / signing up
     const foundUser = await db.User.findById(decoded.id)
+    // Find the products linked to the user by the ID of that user
     const userProducts = await db.Product.find({ user: foundUser._id })
     res.json({
         user: foundUser,
