@@ -29,7 +29,7 @@ function Nav(props) {
           
         </nav>
         : 
-        <nav className="navbar mavbar-expand-lg navbar-light bg-dark">
+        <nav className="navbar mavbar-expand-lg navbar-light bg-white">
           <div className="navbar-header">
               <Image src="https://i.postimg.cc/wvXyPfjH/sailboat.png" width="25%" fluid />
               <a className="navbar-brand" href="/">Yard Sail</a>
