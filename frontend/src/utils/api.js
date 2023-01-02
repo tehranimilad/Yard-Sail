@@ -25,14 +25,14 @@ export async function userSignUp(formData) {
 // Show User / Posts (Account Page)
 
 export async function getUserAccount(userId) {
-    const { data } = await axios.get('user/' + userId, config)
+    const { data } = await axios.get(`user/${userId}`, config)
     return data
 }
 
 // Delete User and Associated Products
 
 export async function deleteUserAccount(userId) {
-    await axios.delete('user/' + userId, config)
+    await axios.delete(`user/${userId}`, config)
 }
 
 // Get token data
@@ -61,20 +61,20 @@ export async function getAllProducts() {
 // Show One Product
 
 export async function showOneProduct(itemId) {
-    const { data } = await axios.get('product/' + itemId)
+    const { data } = await axios.get(`product/${itemId}`)
     return data
 }
 
 // Update a Product
 
 export async function updateOneProduct(itemId, formData) {
-    const { data } = await axios.put('product/' + itemId, formData)
+    const { data } = await axios.put(`product/${itemId}`, formData)
     return data
 }
 
 // Delete a product
 
 export async function deleteOneProduct(itemId) {
-    await axios.delete('product/' + itemId, config)
+    await axios.delete(`product/${itemId}`, config)
 }
 
