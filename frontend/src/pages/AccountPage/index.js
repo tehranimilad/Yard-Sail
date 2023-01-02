@@ -2,8 +2,7 @@ import { deleteUserAccount } from "../../utils/api"
 import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
 import Button from 'react-bootstrap/Button';
-import React from "react";
-import React, { useEffect, useState } from "react";
+import React { useEffect, useState } from "react";
 import './accountPage.css'
 import { Image } from "react-bootstrap";
 
