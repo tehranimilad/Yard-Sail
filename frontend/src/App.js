@@ -33,7 +33,7 @@ function App() {
       setIsLoading(false)
     }
     
-  }, [])
+  }, [isLoggedIn])
 
   
   return (
