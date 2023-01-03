@@ -14,7 +14,7 @@ function isAuthenticated(req,res,next) {
 }
 
 // Create Route - Works in Postman
-router.post('/', isAuthenticated, async (req,res) => {
+router.post('/product/', isAuthenticated, async (req,res) => {
     const createdProduct = await db.Product.create(req.body)
     const token = req.headers.authorization
     const decoded = jwt.decode(token, config.jwtSecret)
@@ -25,19 +25,19 @@ router.post('/', isAuthenticated, async (req,res) => {
 
 // Index - Works in Postman
 // Populate grabs all of the information associated with the user ID stored in the user collection
-router.get('/', async (req,res) => {
+router.get('/product/', async (req,res) => {
     const allProducts = await db.Product.find({}).populate('user')
     res.json(allProducts)
 })
 
 // Show Route - works in Postman
-router.get('/:id', async (req,res) => {
+router.get('/product/:id', async (req,res) => {
     const foundProduct = await db.Product.findById(req.params.id).populate('user')
     res.json(foundProduct)
 })
 
 // Update Route - works in Postman
-router.put('/:id', async (req,res) => {
+router.put('/productedit/product/:id', async (req,res) => {
     const foundProduct = await db.Product.findById(req.params.id)
         const updatedProduct = await db.Product.findByIdAndUpdate(
             req.params.id,
@@ -49,7 +49,7 @@ router.put('/:id', async (req,res) => {
 })
 
 // Delete route - works in Postman
-router.delete('/:id', isAuthenticated, async (req,res) => {
+router.delete('/productedit/product/:id', isAuthenticated, async (req,res) => {
     await db.Product.findByIdAndDelete(req.params.id)
     res.sendStatus(200)
 })
