@@ -8,7 +8,14 @@ import './EditProduct.css'
 const ShowProductEdit = () => {
     const navigate = useNavigate()
 
-    const [showProductData, setShowProductData] = useState({})
+    const [showProductData, setShowProductData] = useState({
+        title: '', 
+        description: '',
+        image: '',
+        location: '',
+        price: '',
+        contact: ''
+    })
     const [editedState, setEditedState] = useState({
         title: '', 
         description: '',
@@ -20,8 +27,11 @@ const ShowProductEdit = () => {
     
     
     const {id} = useParams()
+   
+    console.log(showProductData)
     useEffect(() => {
         showOneProduct(id).then(data => {
+            console.log(data)
             setShowProductData(data)
             setEditedState(data)
         })

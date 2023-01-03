@@ -8,24 +8,24 @@ import './accountPage.css'
 
 const AccountPage = (props) => {
     const navigate = useNavigate()
-    const [userData, setUserData] = useState({})
+    const [userData, setUserData] = useState({username: ''})
     const [userProductData, setUserProductData] = useState([])
     
     // useEffect sets the user data equal to the user property of the current user, which is passed down through props
     // then it sets the product data equal to the products property of the current user, also passed down through props
     // This happens everytime props (currentUser / isLoggedIn) changes
 
-    // useEffect(() => {
-    //     setUserData(props.currentUser.user)
-    //     setUserProductData(props.currentUser.products)
-    // }, [props])
-
     useEffect(() => {
-        getToken().then(data => {
-            setUserData(data.user)
-            setUserProductData(data.products)
-        })
-    }, [])
+        setUserData(props.currentUser.user)
+        setUserProductData(props.currentUser.products)
+    }, [props])
+
+    // useEffect(() => {
+    //     getToken().then(data => {
+    //         setUserData(data.user)
+    //         setUserProductData(data.products)
+    //     })
+    // }, [])
     
 
     const handleDelete = () => {
