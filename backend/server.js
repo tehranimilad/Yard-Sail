@@ -11,7 +11,7 @@ const path = require("path")
 const PORT = process.env.PORT
 
 const userCtrl = require('./controllers/users')
-// const productCtrl = require('./controllers/products')
+const productCtrl = require('./controllers/products')
 
 
 // Middleware
@@ -25,7 +25,7 @@ app.use(express.static(path.join(path.dirname(__dirname), "frontend", "build")))
 // routes
 
 app.use('/user', userCtrl)
-// app.use('/product', productCtrl)
+app.use('/product', productCtrl)
 app.get("*", (req, res) => {
     res.sendFile(path.join(path.dirname(__dirname), "frontend", "build", "index.html"));
 });
