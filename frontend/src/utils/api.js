@@ -68,7 +68,7 @@ export async function showOneProduct(itemId) {
 // Update a Product
 
 export async function updateOneProduct(itemId, formData) {
-    const { data } = await axios.put(`product/${itemId}`, formData)
+    const { data } = await axios.put(`product/${itemId}/edit`, formData)
     return data
 }
 

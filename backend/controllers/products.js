@@ -37,7 +37,7 @@ router.get('/:id', async (req,res) => {
 })
 
 // Update Route - works in Postman
-router.put('/:id', async (req,res) => {
+router.put('/:id/edit', async (req,res) => {
     const foundProduct = await db.Product.findById(req.params.id)
         const updatedProduct = await db.Product.findByIdAndUpdate(
             req.params.id,
