@@ -46,8 +46,8 @@ function App() {
         <Nav isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         <Routes>
           <Route path="/" element={<Home/>} />
-          <Route path="product/:id" element={<ShowProduct currentUser={currentUser}/>} />
-          <Route path="/product/:id/edit" element={<ShowProductEdit />} />
+          <Route path="/:id" element={<ShowProduct currentUser={currentUser}/>} />
+          <Route path="/:id/edit" element={<ShowProductEdit />} />
           <Route path="/login" element={<LogIn setIsLoggedIn={setIsLoggedIn} />} />
           <Route path="/signup" element={<SignUp setIsLoggedIn={setIsLoggedIn}/>} />
           <Route path="/newproduct" element={<NewProduct/>} />

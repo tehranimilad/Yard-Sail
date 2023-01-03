@@ -14,6 +14,7 @@ const ShowProduct = () => {
     
 
     const {id} = useParams()
+  
     useEffect(() => {
         showOneProduct(id).then(data => {setShowProductData(data)})
     }, [id])

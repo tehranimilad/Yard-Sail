@@ -70,7 +70,7 @@ const AccountPage = (props) => {
                             <p className="card-text">{product.description}</p>
                             
                             <div>
-                            <Link to={"/product/" + product._id + "/edit"}>Edit</Link>
+                            <Link to={"/" + product._id + "/edit"}>Edit</Link>
                             </div>
                         </div>
                     </div>
