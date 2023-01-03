@@ -2,4 +2,4 @@
 Group Members: 
 Desiree, Milad, Tanner
 
-![Screen Shot 2022-12-22 at 11 23 38 PM](https://user-images.githubusercontent.com/114964227/209291203-fefb51cc-f80f-4352-9b42-6bd7c623db56.png)
+![homepage](https://user-images.githubusercontent.com/114964227/210301116-941b7853-4883-4a16-80e9-91a96a43714b.JPG)
