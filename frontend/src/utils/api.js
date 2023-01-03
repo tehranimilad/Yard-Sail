@@ -61,20 +61,20 @@ export async function getAllProducts() {
 // Show One Product
 
 export async function showOneProduct(itemId) {
-    const { data } = await axios.get(`product/${itemId}`)
+    const { data } = await axios.get(`/product/${itemId}`)
     return data
 }
 
 // Update a Product
 
 export async function updateOneProduct(itemId, formData) {
-    const { data } = await axios.put(`product/${itemId}/edit`, formData)
+    const { data } = await axios.put(`/product/${itemId}/edit`, formData)
     return data
 }
 
 // Delete a product
 
 export async function deleteOneProduct(itemId) {
-    await axios.delete(`product/${itemId}`, config)
+    await axios.delete(`/product/${itemId}`, config)
 }
 

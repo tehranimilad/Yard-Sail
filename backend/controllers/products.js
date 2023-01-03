@@ -32,7 +32,7 @@ router.get('/', async (req,res) => {
 
 // Show Route - works in Postman
 router.get('/:id', async (req,res) => {
-    const foundProduct = await db.Product.findById(req.params.id).populate('user')
+    const foundProduct = await db.Product.findById(req.params.id)
     res.json(foundProduct)
 })
 
