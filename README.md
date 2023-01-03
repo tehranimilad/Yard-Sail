@@ -9,6 +9,7 @@ Introduction:
 -Yard Sail is a full stack application with a React frontend. The purpose of Yard Sail is to allow users (buyers and sellers) to view and post local items for sale. 
 
 Technologies Used:
+
     - React
     - React Bootstrap
     - Cors
@@ -37,3 +38,4 @@ Installation Instructions:
 
 Unsolved Problems:
 -Using Molter to upload an image file instead of a link.
+

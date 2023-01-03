@@ -14,7 +14,7 @@ const Home = () => {
     const [productList, setProductList] = useState([])
 
     
-
+    //  Grabs all the products in the database and updates the state of our productlist with that data
     useEffect(() => {
 
       getAllProducts()
@@ -30,7 +30,7 @@ const Home = () => {
         
 
         <div className="row">
-    <div className="col-md-8">
+    <div className="col-md-8 mx-auto">
 
     <Carousel variant="dark">
       <Carousel.Item>
@@ -64,11 +64,14 @@ const Home = () => {
 
         </div>
         </div>
+
         <div className="row">
+        {/* Maps over the Product List array and renders a product card component for each product */}
+
           {productList.map((product, i) => {
             return(
               
-              <ProductCard product={product} key={i} productList={productList} setProductList={setProductList} />
+              <ProductCard product={product} key={i} />
               
               
             );
@@ -76,7 +79,7 @@ const Home = () => {
           )
         }
 
-</div>
+       </div>
       </main>
     );
 }

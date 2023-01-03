@@ -1,28 +1,35 @@
-import { deleteUserAccount } from "../../utils/api"
+import { deleteUserAccount, getToken } from "../../utils/api"
 import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
 import Button from 'react-bootstrap/Button';
-import React { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+
 import './accountPage.css'
-import { Image } from "react-bootstrap";
+
 
 const AccountPage = (props) => {
     const navigate = useNavigate()
-    const [userData, setUserData] = useState({})
+    const [userData, setUserData] = useState({username: ''})
     const [userProductData, setUserProductData] = useState([])
     
-    
+    // useEffect sets the user data equal to the user property of the current user, which is passed down through props
+    // then it sets the product data equal to the products property of the current user, also passed down through props
+    // This happens everytime props (currentUser / isLoggedIn) changes
+
     useEffect(() => {
         setUserData(props.currentUser.user)
         setUserProductData(props.currentUser.products)
     }, [props])
 
     const handleDelete = () => {
+        // Axios function to delete user account by using user.id 
         deleteUserAccount(userData._id)
+        // Clearning local storage in order to log out user
         localStorage.clear()
+        // Setting user's login status to false, aka logged out
         props.setIsLoggedIn(false)
+        // Then navigate back home
         navigate('/')
-
     }
 
     return(
@@ -56,7 +63,7 @@ const AccountPage = (props) => {
                             <p className="card-text">{product.description}</p>
                             
                             <div>
-                            <Link to={"/productedit/" + product._id}>Edit</Link>
+                            <Link to={"/" + product._id + "/edit"}>Edit</Link>
                             </div>
                         </div>
                     </div>

@@ -20,15 +20,20 @@ function App() {
   
   
   useEffect(() => {
+    // If local storage token exists then: 
     if (localStorage.token) {
+      // Grab the token and the user data associated with the specific token
       getToken().then(data => {setUser(data)})
+      // Set the User as Logged In
       setIsLoggedIn(true)
+      // Set the loading status to false
       setIsLoading(false)
     } else {
+      // If the token doesn't exists, page will load with the original empty current user state.
       setIsLoading(false)
     }
     
-  }, [])
+  }, [isLoggedIn])
 
   
   return (
@@ -41,8 +46,8 @@ function App() {
         <Nav isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         <Routes>
           <Route path="/" element={<Home/>} />
-          <Route path="product/:id" element={<ShowProduct currentUser={currentUser}/>} />
-          <Route path="/productedit/:id" element={<ShowProductEdit />} />
+          <Route path="/:id" element={<ShowProduct currentUser={currentUser}/>} />
+          <Route path="/:id/edit" element={<ShowProductEdit />} />
           <Route path="/login" element={<LogIn setIsLoggedIn={setIsLoggedIn} />} />
           <Route path="/signup" element={<SignUp setIsLoggedIn={setIsLoggedIn}/>} />
           <Route path="/newproduct" element={<NewProduct/>} />
